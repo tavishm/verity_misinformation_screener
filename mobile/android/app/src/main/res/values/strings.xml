@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Verity</string>
+    <string name="helper_description">Screen visible WhatsApp forwards and messages from unknown or chosen contacts. When SMS scam warnings are enabled, also warn about possible scams from unsaved senders in Google Messages. Screening happens on this phone. SMS is not uploaded. Only a WhatsApp message you approve is sent for online checking.</string>
+</resources>

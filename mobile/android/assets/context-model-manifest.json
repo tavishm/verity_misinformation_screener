@@ -1,0 +1,10 @@
+{
+  "name": "Forward Check contextual routing model",
+  "file": "context-encoder-int8.onnx",
+  "sha256": "0b69329eaf329868e8f00f93d8ba6c286a09dae15e4fac0785f7610de766251e",
+  "bytes": 135747129,
+  "base_model": "sentence-transformers/distiluse-base-multilingual-cased-v2",
+  "base_model_revision": "bfe45d0732ca50787611c0fe107ba278c7f3f889",
+  "base_model_license": "Apache-2.0",
+  "purpose": "On-device routing of personal messages, public claims, and possible spam. It does not determine truth."
+}

@@ -1,0 +1,4 @@
+# Dependencies used by the source-only regression suite in CI and locally.
+beautifulsoup4==4.12.3
+fastapi==0.115.12
+httpx==0.28.1

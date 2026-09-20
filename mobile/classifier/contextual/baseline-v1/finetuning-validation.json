@@ -1,0 +1,30 @@
+[
+  {
+    "personal_threshold": 0.7600000000000003,
+    "spam_threshold": 0.9200000000000005,
+    "validation_group_balanced_accuracy": 0.847576636071414,
+    "epoch": 1,
+    "train_loss": 0.21618325968971475
+  },
+  {
+    "personal_threshold": 0.9800000000000005,
+    "spam_threshold": 0.9800000000000005,
+    "validation_group_balanced_accuracy": 0.8889463815237771,
+    "epoch": 2,
+    "train_loss": 0.11863949477226318
+  },
+  {
+    "personal_threshold": 0.9200000000000005,
+    "spam_threshold": 0.995,
+    "validation_group_balanced_accuracy": 0.8923500142385443,
+    "epoch": 3,
+    "train_loss": 0.09985692981111545
+  },
+  {
+    "personal_threshold": 0.4,
+    "spam_threshold": 0.995,
+    "validation_group_balanced_accuracy": 0.899786962426958,
+    "epoch": 4,
+    "train_loss": 0.06954081136076032
+  }
+]

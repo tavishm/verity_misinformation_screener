@@ -1,0 +1,1484 @@
+[
+  {
+    "text": "May this Diwali bring your family joy.",
+    "label": "personal",
+    "language": "en",
+    "group": 0,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9994198083877563,
+      0.000573295692447573,
+      6.949836006242549e-06
+    ]
+  },
+  {
+    "text": "इस दिवाली आपके परिवार में खुशियाँ आएँ।",
+    "label": "personal",
+    "language": "hi",
+    "group": 0,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9948416352272034,
+      0.00014793791342526674,
+      0.005010489374399185
+    ]
+  },
+  {
+    "text": "Is Diwali aapke parivaar mein khushiyan aayein.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 0,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9998088479042053,
+      0.0001809175155358389,
+      1.0195664799539372e-05
+    ]
+  },
+  {
+    "text": "I am so proud of my daughter for finishing school.",
+    "label": "personal",
+    "language": "en",
+    "group": 1,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9999306201934814,
+      5.942278221482411e-05,
+      9.849402886175085e-06
+    ]
+  },
+  {
+    "text": "अपनी बेटी की पढ़ाई पूरी होने पर मुझे गर्व है।",
+    "label": "personal",
+    "language": "hi",
+    "group": 1,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.999847412109375,
+      0.000134461690322496,
+      1.8126307622878812e-05
+    ]
+  },
+  {
+    "text": "Apni beti ki padhai poori hone par mujhe garv hai.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 1,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.0010436235461384058,
+      0.9988605976104736,
+      9.570414113113657e-05
+    ]
+  },
+  {
+    "text": "I miss you. Please come home soon.",
+    "label": "personal",
+    "language": "en",
+    "group": 2,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9999737739562988,
+      1.743151187838521e-05,
+      8.778431947575882e-06
+    ]
+  },
+  {
+    "text": "तुम्हारी याद आती है। जल्दी घर आओ।",
+    "label": "personal",
+    "language": "hi",
+    "group": 2,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9997400641441345,
+      2.881503132812213e-05,
+      0.00023104905267246068
+    ]
+  },
+  {
+    "text": "Tumhari yaad aati hai. Jaldi ghar aao.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 2,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9964520931243896,
+      0.0035385338123887777,
+      9.399933333043009e-06
+    ]
+  },
+  {
+    "text": "I have a fever and will rest today.",
+    "label": "personal",
+    "language": "en",
+    "group": 3,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.6961597800254822,
+      0.3038375973701477,
+      2.5964920951082604e-06
+    ]
+  },
+  {
+    "text": "मुझे बुखार है और मैं आज आराम करूँगा।",
+    "label": "personal",
+    "language": "hi",
+    "group": 3,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.6348037719726562,
+      0.3651944100856781,
+      1.787647988749086e-06
+    ]
+  },
+  {
+    "text": "Mujhe bukhar hai aur main aaj aaram karunga.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 3,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9154771566390991,
+      0.08228614181280136,
+      0.0022367320489138365
+    ]
+  },
+  {
+    "text": "Please call me after dinner.",
+    "label": "personal",
+    "language": "en",
+    "group": 4,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9999340772628784,
+      4.9447378842160106e-05,
+      1.6457244782941416e-05
+    ]
+  },
+  {
+    "text": "खाने के बाद मुझे फ़ोन करना।",
+    "label": "personal",
+    "language": "hi",
+    "group": 4,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9973024129867554,
+      0.0026724995113909245,
+      2.504879012121819e-05
+    ]
+  },
+  {
+    "text": "Khaane ke baad mujhe phone karna.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 4,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      7.212927448563278e-05,
+      0.0003591179265640676,
+      0.99956876039505
+    ]
+  },
+  {
+    "text": "I prefer tea to coffee.",
+    "label": "personal",
+    "language": "en",
+    "group": 5,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9969646334648132,
+      0.003034229390323162,
+      1.1554670891200658e-06
+    ]
+  },
+  {
+    "text": "मुझे कॉफ़ी से ज़्यादा चाय पसंद है।",
+    "label": "personal",
+    "language": "hi",
+    "group": 5,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9641361236572266,
+      0.035862453281879425,
+      1.4295228538685478e-06
+    ]
+  },
+  {
+    "text": "Mujhe coffee se zyada chai pasand hai.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 5,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9341112971305847,
+      0.06588704138994217,
+      1.709692014628672e-06
+    ]
+  },
+  {
+    "text": "Happy anniversary to both of you.",
+    "label": "personal",
+    "language": "en",
+    "group": 6,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.999872088432312,
+      0.0001247419131686911,
+      3.0929736567486543e-06
+    ]
+  },
+  {
+    "text": "आप दोनों को शादी की सालगिरह मुबारक।",
+    "label": "personal",
+    "language": "hi",
+    "group": 6,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.19562861323356628,
+      0.8039002418518066,
+      0.00047116063069552183
+    ]
+  },
+  {
+    "text": "Aap dono ko shaadi ki saalgirah mubarak.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 6,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9985042810440063,
+      0.0014622495509684086,
+      3.342497439007275e-05
+    ]
+  },
+  {
+    "text": "Never give anyone your banking password.",
+    "label": "personal",
+    "language": "en",
+    "group": 7,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9875643849372864,
+      0.011342799291014671,
+      0.0010928104165941477
+    ]
+  },
+  {
+    "text": "किसी को अपने बैंक का पासवर्ड मत देना।",
+    "label": "personal",
+    "language": "hi",
+    "group": 7,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9789212346076965,
+      0.016150198876857758,
+      0.0049285911954939365
+    ]
+  },
+  {
+    "text": "Kisi ko apne bank ka password mat dena.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 7,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      0.00021487733465619385,
+      7.633810810148134e-07,
+      0.9997844099998474
+    ]
+  },
+  {
+    "text": "The message asking for an OTP is a scam. Ignore it.",
+    "label": "personal",
+    "language": "en",
+    "group": 8,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      0.00069350068224594,
+      3.6815279713664495e-07,
+      0.9993060827255249
+    ]
+  },
+  {
+    "text": "ओटीपी माँगने वाला संदेश धोखा है। उसे छोड़ दो।",
+    "label": "personal",
+    "language": "hi",
+    "group": 8,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      9.39878445933573e-05,
+      8.555744898330886e-06,
+      0.9998974800109863
+    ]
+  },
+  {
+    "text": "OTP maangne wala message dhokha hai. Use chhod do.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 8,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.0060859378427267075,
+      1.1177867236256134e-06,
+      0.9939128756523132
+    ]
+  },
+  {
+    "text": "I just paid the electricity bill.",
+    "label": "personal",
+    "language": "en",
+    "group": 9,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.03960934281349182,
+      0.9603318572044373,
+      5.880638491362333e-05
+    ]
+  },
+  {
+    "text": "मैंने अभी बिजली का बिल भरा है।",
+    "label": "personal",
+    "language": "hi",
+    "group": 9,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.6756073236465454,
+      0.3203655481338501,
+      0.004027116112411022
+    ]
+  },
+  {
+    "text": "Maine abhi bijli ka bill bhara hai.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 9,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.0012500877492129803,
+      0.9985554814338684,
+      0.0001943428214872256
+    ]
+  },
+  {
+    "text": "Mom, do you want me to bring some oranges?",
+    "label": "personal",
+    "language": "en",
+    "group": 10,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9997509121894836,
+      0.0002447621081955731,
+      4.312105374992825e-06
+    ]
+  },
+  {
+    "text": "माँ, क्या मैं आपके लिए संतरे लाऊँ?",
+    "label": "personal",
+    "language": "hi",
+    "group": 10,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9670370221138,
+      0.03268051892518997,
+      0.0002824248804245144
+    ]
+  },
+  {
+    "text": "Maa, kya main aapke liye santre laaun?",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 10,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9917697906494141,
+      0.008204365149140358,
+      2.5949249902623706e-05
+    ]
+  },
+  {
+    "text": "I am worried about my exam.",
+    "label": "personal",
+    "language": "en",
+    "group": 11,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9985677003860474,
+      0.0014309469843283296,
+      1.2632517609745264e-06
+    ]
+  },
+  {
+    "text": "मुझे अपनी परीक्षा की चिंता है।",
+    "label": "personal",
+    "language": "hi",
+    "group": 11,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9991102814674377,
+      0.00088744011009112,
+      2.2631629690295085e-06
+    ]
+  },
+  {
+    "text": "Mujhe apni pariksha ki chinta hai.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 11,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.997256338596344,
+      0.00011040209938073531,
+      0.0026332184206694365
+    ]
+  },
+  {
+    "text": "You do not need to send me money.",
+    "label": "personal",
+    "language": "en",
+    "group": 12,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9991814494132996,
+      0.0007849432295188308,
+      3.362238931003958e-05
+    ]
+  },
+  {
+    "text": "तुम्हें मुझे पैसे भेजने की ज़रूरत नहीं है।",
+    "label": "personal",
+    "language": "hi",
+    "group": 12,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9921534657478333,
+      0.0008781687938608229,
+      0.006968286819756031
+    ]
+  },
+  {
+    "text": "Tumhe mujhe paise bhejne ki zaroorat nahi hai.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 12,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.001880637719295919,
+      0.998087465763092,
+      3.18501734000165e-05
+    ]
+  },
+  {
+    "text": "The movie felt too long to me.",
+    "label": "personal",
+    "language": "en",
+    "group": 13,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9975816011428833,
+      0.002415458904579282,
+      2.943842218883219e-06
+    ]
+  },
+  {
+    "text": "मुझे फ़िल्म बहुत लंबी लगी।",
+    "label": "personal",
+    "language": "hi",
+    "group": 13,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9988138675689697,
+      0.001176662975922227,
+      9.577795026416425e-06
+    ]
+  },
+  {
+    "text": "Mujhe film bahut lambi lagi.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 13,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.23970918357372284,
+      0.7598599791526794,
+      0.0004308407078497112
+    ]
+  },
+  {
+    "text": "My train arrives at eight. I will call you.",
+    "label": "personal",
+    "language": "en",
+    "group": 14,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9997296929359436,
+      0.00022182233806233853,
+      4.847432137466967e-05
+    ]
+  },
+  {
+    "text": "मेरी ट्रेन आठ बजे आती है। मैं फ़ोन करूँगा।",
+    "label": "personal",
+    "language": "hi",
+    "group": 14,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9992751479148865,
+      6.995104195084423e-05,
+      0.0006549301324412227
+    ]
+  },
+  {
+    "text": "Meri train aath baje aati hai. Main phone karunga.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 14,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9932988882064819,
+      5.113649240229279e-05,
+      0.006649961229413748
+    ]
+  },
+  {
+    "text": "The moon produces its own light.",
+    "label": "claim",
+    "language": "en",
+    "group": 15,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.05402118340134621,
+      0.9459754824638367,
+      3.3161331884912215e-06
+    ]
+  },
+  {
+    "text": "चाँद अपनी रोशनी खुद पैदा करता है।",
+    "label": "claim",
+    "language": "hi",
+    "group": 15,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.01827017404139042,
+      0.9817202091217041,
+      9.574227988196071e-06
+    ]
+  },
+  {
+    "text": "Chaand apni roshni khud paida karta hai.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 15,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.037389207631349564,
+      0.9421813488006592,
+      0.02042943798005581
+    ]
+  },
+  {
+    "text": "Drinking cold water damages the heart.",
+    "label": "claim",
+    "language": "en",
+    "group": 16,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.001473402138799429,
+      0.9985243678092957,
+      2.226830702056759e-06
+    ]
+  },
+  {
+    "text": "ठंडा पानी पीने से दिल खराब हो जाता है।",
+    "label": "claim",
+    "language": "hi",
+    "group": 16,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.00014867664140183479,
+      0.9998476505279541,
+      3.7532186070166063e-06
+    ]
+  },
+  {
+    "text": "Thanda paani peene se dil kharab ho jaata hai.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 16,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.1423642635345459,
+      0.8576212525367737,
+      1.4565042874892242e-05
+    ]
+  },
+  {
+    "text": "Eating chicken causes brain cells to die.",
+    "label": "claim",
+    "language": "en",
+    "group": 17,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.00016573545872233808,
+      0.9998155236244202,
+      1.874974805105012e-05
+    ]
+  },
+  {
+    "text": "चिकन खाने से दिमाग की कोशिकाएँ मर जाती हैं।",
+    "label": "claim",
+    "language": "hi",
+    "group": 17,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      2.2321892174659297e-05,
+      0.9999439716339111,
+      3.369030309841037e-05
+    ]
+  },
+  {
+    "text": "Chicken khaane se dimaag ki koshikayein mar jaati hain.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 17,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.18280458450317383,
+      0.8171740770339966,
+      2.13078656088328e-05
+    ]
+  },
+  {
+    "text": "Antibiotics cure every viral infection.",
+    "label": "claim",
+    "language": "en",
+    "group": 18,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      2.0459259758354165e-05,
+      0.999976396560669,
+      3.0901974241714925e-06
+    ]
+  },
+  {
+    "text": "एंटीबायोटिक हर वायरल संक्रमण ठीक कर देती है।",
+    "label": "claim",
+    "language": "hi",
+    "group": 18,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      7.323728368646698e-06,
+      0.9999641180038452,
+      2.8636883143917657e-05
+    ]
+  },
+  {
+    "text": "Antibiotic har viral infection theek kar deti hai.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 18,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      4.612722023011884e-06,
+      0.9999840259552002,
+      1.1369690582796466e-05
+    ]
+  },
+  {
+    "text": "The government has abolished all income tax.",
+    "label": "claim",
+    "language": "en",
+    "group": 19,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      8.214045374188572e-05,
+      0.9999158382415771,
+      1.969569666471216e-06
+    ]
+  },
+  {
+    "text": "सरकार ने पूरा आयकर खत्म कर दिया है।",
+    "label": "claim",
+    "language": "hi",
+    "group": 19,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.0025224722921848297,
+      0.9974740147590637,
+      3.4118011171813123e-06
+    ]
+  },
+  {
+    "text": "Sarkar ne poora income tax khatam kar diya hai.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 19,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      1.1450853889982682e-05,
+      0.9999769926071167,
+      1.1608116437855642e-05
+    ]
+  },
+  {
+    "text": "A public leader died this morning.",
+    "label": "claim",
+    "language": "en",
+    "group": 20,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.2733765244483948,
+      0.7266073226928711,
+      1.6194162526517175e-05
+    ]
+  },
+  {
+    "text": "एक बड़े नेता का आज सुबह निधन हो गया।",
+    "label": "claim",
+    "language": "hi",
+    "group": 20,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.0014793684240430593,
+      0.998512327671051,
+      8.376417099498212e-06
+    ]
+  },
+  {
+    "text": "Ek bade neta ka aaj subah nidhan ho gaya.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 20,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.1652410626411438,
+      0.83463454246521,
+      0.000124362763017416
+    ]
+  },
+  {
+    "text": "Happy birthday! By the way, microwaves make food radioactive.",
+    "label": "claim",
+    "language": "en",
+    "group": 21,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9767823815345764,
+      0.019736476242542267,
+      0.0034811077639460564
+    ]
+  },
+  {
+    "text": "जन्मदिन मुबारक! वैसे माइक्रोवेव खाने को रेडियोधर्मी बना देती है।",
+    "label": "claim",
+    "language": "hi",
+    "group": 21,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.6698253750801086,
+      0.14736106991767883,
+      0.1828135848045349
+    ]
+  },
+  {
+    "text": "Janamdin mubarak! Waise microwave khaane ko radioactive bana deti hai.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 21,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.007681185845285654,
+      0.9923126101493835,
+      6.201113137649372e-06
+    ]
+  },
+  {
+    "text": "I think salt water can cure cancer.",
+    "label": "claim",
+    "language": "en",
+    "group": 22,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.000203356466954574,
+      0.9997598528862,
+      3.685072806547396e-05
+    ]
+  },
+  {
+    "text": "मुझे लगता है नमक का पानी कैंसर ठीक कर सकता है।",
+    "label": "claim",
+    "language": "hi",
+    "group": 22,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      2.9009390345891006e-05,
+      0.9999392032623291,
+      3.1811152439331636e-05
+    ]
+  },
+  {
+    "text": "Mujhe lagta hai namak ka paani cancer theek kar sakta hai.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 22,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      1.0152710274269339e-05,
+      0.9997068047523499,
+      0.00028299709083512425
+    ]
+  },
+  {
+    "text": "No vaccine prevents any disease.",
+    "label": "claim",
+    "language": "en",
+    "group": 23,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.0003215191827621311,
+      0.9996781349182129,
+      3.282636669155181e-07
+    ]
+  },
+  {
+    "text": "कोई भी टीका किसी बीमारी से नहीं बचाता।",
+    "label": "claim",
+    "language": "hi",
+    "group": 23,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      3.2221447327174246e-05,
+      0.9999668598175049,
+      9.258231443709519e-07
+    ]
+  },
+  {
+    "text": "Koi bhi teeka kisi bimaari se nahi bachata.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 23,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9998143315315247,
+      0.00015958360745571554,
+      2.6128864192287438e-05
+    ]
+  },
+  {
+    "text": "Plants need sunlight to make food.",
+    "label": "claim",
+    "language": "en",
+    "group": 24,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.3919796645641327,
+      0.6080158948898315,
+      4.459737283468712e-06
+    ]
+  },
+  {
+    "text": "पौधों को भोजन बनाने के लिए सूरज की रोशनी चाहिए।",
+    "label": "claim",
+    "language": "hi",
+    "group": 24,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.06349465250968933,
+      0.9364970922470093,
+      8.206120583054144e-06
+    ]
+  },
+  {
+    "text": "Paudhon ko bhojan banaane ke liye suraj ki roshni chahiye.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 24,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.1777421236038208,
+      0.8222532868385315,
+      4.62066100226366e-06
+    ]
+  },
+  {
+    "text": "Mosquitoes transmit dengue.",
+    "label": "claim",
+    "language": "en",
+    "group": 25,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      5.908501407247968e-06,
+      0.9999737739562988,
+      2.0216415578033775e-05
+    ]
+  },
+  {
+    "text": "मच्छर डेंगू फैलाते हैं।",
+    "label": "claim",
+    "language": "hi",
+    "group": 25,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      3.2085631573863793e-06,
+      0.9999165534973145,
+      8.025533315958455e-05
+    ]
+  },
+  {
+    "text": "Machhar dengue phailaate hain.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 25,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      4.2662530177040026e-05,
+      0.9999194145202637,
+      3.792034476646222e-05
+    ]
+  },
+  {
+    "text": "All banknotes will become invalid tomorrow.",
+    "label": "claim",
+    "language": "en",
+    "group": 26,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.951686680316925,
+      0.04813718423247337,
+      0.0001762192405294627
+    ]
+  },
+  {
+    "text": "कल से सभी नोट बेकार हो जाएँगे।",
+    "label": "claim",
+    "language": "hi",
+    "group": 26,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.989791750907898,
+      0.010189794935286045,
+      1.83697666216176e-05
+    ]
+  },
+  {
+    "text": "Kal se saare note bekaar ho jaayenge.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 26,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.06760050356388092,
+      0.9321295022964478,
+      0.0002700183540582657
+    ]
+  },
+  {
+    "text": "Lemon juice removes all pesticides from vegetables.",
+    "label": "claim",
+    "language": "en",
+    "group": 27,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.0006278047221712768,
+      0.999371349811554,
+      8.149717132255319e-07
+    ]
+  },
+  {
+    "text": "नींबू का रस सब्जियों से सारे कीटनाशक हटा देता है।",
+    "label": "claim",
+    "language": "hi",
+    "group": 27,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      9.514451812719926e-05,
+      0.9999037981033325,
+      1.0271154451402253e-06
+    ]
+  },
+  {
+    "text": "Nimbu ka ras sabziyon se saare keetnashak hata deta hai.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 27,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      6.377409590641037e-05,
+      0.9998792409896851,
+      5.701297413907014e-05
+    ]
+  },
+  {
+    "text": "The human body has more than one lung.",
+    "label": "claim",
+    "language": "en",
+    "group": 28,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.000129567357362248,
+      0.9998688697814941,
+      1.5051175523694837e-06
+    ]
+  },
+  {
+    "text": "इंसान के शरीर में एक से ज़्यादा फेफड़े होते हैं।",
+    "label": "claim",
+    "language": "hi",
+    "group": 28,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      5.302696081344038e-05,
+      0.9999344348907471,
+      1.2470620276872069e-05
+    ]
+  },
+  {
+    "text": "Insaan ke sharir mein ek se zyada phephde hote hain.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 28,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.6658498644828796,
+      0.3341103792190552,
+      3.97695621359162e-05
+    ]
+  },
+  {
+    "text": "Taking extra vitamins means you never need sleep.",
+    "label": "claim",
+    "language": "en",
+    "group": 29,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.008585347793996334,
+      0.9914138317108154,
+      8.635701078674174e-07
+    ]
+  },
+  {
+    "text": "ज़्यादा विटामिन लेने पर नींद की ज़रूरत नहीं रहती।",
+    "label": "claim",
+    "language": "hi",
+    "group": 29,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.000939604826271534,
+      0.9990597367286682,
+      6.643610959145008e-07
+    ]
+  },
+  {
+    "text": "Zyada vitamin lene par neend ki zaroorat nahi rehti.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 29,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      8.599418652011082e-05,
+      0.999913215637207,
+      7.850165388845198e-07
+    ]
+  },
+  {
+    "text": "Send your bank password so we can release your refund.",
+    "label": "scam",
+    "language": "en",
+    "group": 30,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      3.0043565857340582e-05,
+      7.03596242601634e-07,
+      0.9999692440032959
+    ]
+  },
+  {
+    "text": "रिफंड पाने के लिए अपने बैंक का पासवर्ड भेजें।",
+    "label": "scam",
+    "language": "hi",
+    "group": 30,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      3.26054987453972e-06,
+      3.6416786315385252e-06,
+      0.999993085861206
+    ]
+  },
+  {
+    "text": "Refund paane ke liye apne bank ka password bhejein.",
+    "label": "scam",
+    "language": "hinglish",
+    "group": 30,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      1.9484639778966084e-05,
+      4.2132515432058426e-07,
+      0.999980092048645
+    ]
+  },
+  {
+    "text": "Share the OTP you just received to stop your account being blocked.",
+    "label": "scam",
+    "language": "en",
+    "group": 31,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      7.740327419014648e-06,
+      6.523416118398018e-07,
+      0.9999916553497314
+    ]
+  },
+  {
+    "text": "खाता बंद होने से बचाने के लिए अभी आया ओटीपी बताइए।",
+    "label": "scam",
+    "language": "hi",
+    "group": 31,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      7.208672059277887e-07,
+      0.00012131566472817212,
+      0.9998779296875
+    ]
+  },
+  {
+    "text": "Account band hone se bachaane ke liye abhi aaya OTP bataiye.",
+    "label": "scam",
+    "language": "hinglish",
+    "group": 31,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      7.310085493372753e-06,
+      2.0873674202448456e-06,
+      0.9999905824661255
+    ]
+  },
+  {
+    "text": "You won a lottery. Pay a processing fee to collect the prize.",
+    "label": "scam",
+    "language": "en",
+    "group": 32,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      0.00014916576037649065,
+      8.0586132753524e-06,
+      0.9998427629470825
+    ]
+  },
+  {
+    "text": "आपकी लॉटरी लगी है। इनाम लेने के लिए पहले फीस भरें।",
+    "label": "scam",
+    "language": "hi",
+    "group": 32,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      1.2920617336931173e-05,
+      2.2785352484788746e-06,
+      0.9999847412109375
+    ]
+  },
+  {
+    "text": "Aapki lottery lagi hai. Inaam lene ke liye pehle fees bharein.",
+    "label": "scam",
+    "language": "hinglish",
+    "group": 32,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      7.859780453145504e-06,
+      2.5649833332863636e-05,
+      0.9999665021896362
+    ]
+  },
+  {
+    "text": "Send your UPI PIN to our verification team.",
+    "label": "scam",
+    "language": "en",
+    "group": 33,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      9.049983054865152e-05,
+      1.0495740525584552e-06,
+      0.999908447265625
+    ]
+  },
+  {
+    "text": "जाँच टीम को अपना यूपीआई पिन भेजें।",
+    "label": "scam",
+    "language": "hi",
+    "group": 33,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      0.002054427983239293,
+      0.00011082013952545822,
+      0.9978347420692444
+    ]
+  },
+  {
+    "text": "Verification team ko apna UPI PIN bhejein.",
+    "label": "scam",
+    "language": "hinglish",
+    "group": 33,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      2.8851782190031372e-05,
+      3.846236268145731e-06,
+      0.9999673366546631
+    ]
+  },
+  {
+    "text": "Install this remote access app and tell me the connection code.",
+    "label": "scam",
+    "language": "en",
+    "group": 34,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      4.3891664972761646e-05,
+      2.417685323052865e-07,
+      0.9999558925628662
+    ]
+  },
+  {
+    "text": "यह रिमोट एक्सेस ऐप लगाइए और मुझे कनेक्शन कोड बताइए।",
+    "label": "scam",
+    "language": "hi",
+    "group": 34,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      1.5174747204582673e-05,
+      3.718162417953863e-07,
+      0.9999845027923584
+    ]
+  },
+  {
+    "text": "Yeh remote access app lagaiye aur mujhe connection code bataiye.",
+    "label": "scam",
+    "language": "hinglish",
+    "group": 34,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      5.829293058923213e-06,
+      5.398621283347893e-07,
+      0.9999936819076538
+    ]
+  },
+  {
+    "text": "Your new job is guaranteed once you pay the registration fee.",
+    "label": "scam",
+    "language": "en",
+    "group": 35,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.003046349622309208,
+      0.8077418208122253,
+      0.18921183049678802
+    ]
+  },
+  {
+    "text": "रजिस्ट्रेशन फीस भरते ही आपकी नौकरी पक्की है।",
+    "label": "scam",
+    "language": "hi",
+    "group": 35,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.16883111000061035,
+      0.8260200023651123,
+      0.005148948170244694
+    ]
+  },
+  {
+    "text": "Registration fees bharte hi aapki naukri pakki hai.",
+    "label": "scam",
+    "language": "hinglish",
+    "group": 35,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      0.00020002384553663433,
+      0.013832525350153446,
+      0.9859674572944641
+    ]
+  },
+  {
+    "text": "Reply with your card number, expiry date, and security code.",
+    "label": "scam",
+    "language": "en",
+    "group": 36,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      0.00043016558629460633,
+      3.9780562133273634e-07,
+      0.9995694756507874
+    ]
+  },
+  {
+    "text": "अपने कार्ड का नंबर, आखिरी तारीख और सुरक्षा कोड भेजें।",
+    "label": "scam",
+    "language": "hi",
+    "group": 36,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      7.873100003052969e-06,
+      1.4159088550513843e-06,
+      0.999990701675415
+    ]
+  },
+  {
+    "text": "Apne card ka number, expiry date aur security code bhejein.",
+    "label": "scam",
+    "language": "hinglish",
+    "group": 36,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      7.175555765570607e-06,
+      1.1261738563916879e-06,
+      0.9999916553497314
+    ]
+  },
+  {
+    "text": "Double your money in a week with no risk. Transfer funds now.",
+    "label": "scam",
+    "language": "en",
+    "group": 37,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "claim",
+    "probabilities": [
+      3.897558417520486e-05,
+      0.1542900800704956,
+      0.8456708788871765
+    ]
+  },
+  {
+    "text": "बिना जोखिम हफ्ते भर में पैसा दोगुना। अभी पैसे भेजें।",
+    "label": "scam",
+    "language": "hi",
+    "group": 37,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "scam",
+    "probabilities": [
+      7.144869596231729e-05,
+      0.003370218211784959,
+      0.9965582489967346
+    ]
+  },
+  {
+    "text": "Bina risk hafte bhar mein paisa doguna. Abhi paise bhejein.",
+    "label": "scam",
+    "language": "hinglish",
+    "group": 37,
+    "source": "assistant-authored-development-challenge",
+    "predicted": "personal",
+    "probabilities": [
+      0.9382137060165405,
+      0.05799177289009094,
+      0.0037945325020700693
+    ]
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "selection": {
+    "synthetic_weight": 30,
+    "C": 20,
+    "personal_threshold": 0.8800000000000004,
+    "spam_threshold": 0.9700000000000004,
+    "validation_group_balanced_accuracy": 0.7387956601134746
+  },
+  "candidates": [
+    {
+      "synthetic_weight": 4,
+      "C": 1,
+      "personal_threshold": 0.6600000000000003,
+      "spam_threshold": 0.8900000000000003,
+      "validation_group_balanced_accuracy": 0.609890046390307
+    },
+    {
+      "synthetic_weight": 4,
+      "C": 5,
+      "personal_threshold": 0.6800000000000003,
+      "spam_threshold": 0.9500000000000004,
+      "validation_group_balanced_accuracy": 0.6497372714900331
+    },
+    {
+      "synthetic_weight": 4,
+      "C": 20,
+      "personal_threshold": 0.7400000000000003,
+      "spam_threshold": 0.9600000000000004,
+      "validation_group_balanced_accuracy": 0.6995189060378227
+    },
+    {
+      "synthetic_weight": 12,
+      "C": 1,
+      "personal_threshold": 0.6600000000000003,
+      "spam_threshold": 0.9300000000000004,
+      "validation_group_balanced_accuracy": 0.6341520673681322
+    },
+    {
+      "synthetic_weight": 12,
+      "C": 5,
+      "personal_threshold": 0.7200000000000003,
+      "spam_threshold": 0.9400000000000004,
+      "validation_group_balanced_accuracy": 0.6899045736739764
+    },
+    {
+      "synthetic_weight": 12,
+      "C": 20,
+      "personal_threshold": 0.7800000000000004,
+      "spam_threshold": 0.9700000000000004,
+      "validation_group_balanced_accuracy": 0.7215468451814415
+    },
+    {
+      "synthetic_weight": 30,
+      "C": 1,
+      "personal_threshold": 0.7200000000000003,
+      "spam_threshold": 0.9700000000000004,
+      "validation_group_balanced_accuracy": 0.5851896212596684
+    },
+    {
+      "synthetic_weight": 30,
+      "C": 5,
+      "personal_threshold": 0.8200000000000004,
+      "spam_threshold": 0.9600000000000004,
+      "validation_group_balanced_accuracy": 0.688414384410504
+    },
+    {
+      "synthetic_weight": 30,
+      "C": 20,
+      "personal_threshold": 0.8800000000000004,
+      "spam_threshold": 0.9700000000000004,
+      "validation_group_balanced_accuracy": 0.7387956601134746
+    }
+  ]
+}

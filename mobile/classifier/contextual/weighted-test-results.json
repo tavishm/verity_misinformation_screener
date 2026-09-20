@@ -1,0 +1,102 @@
+{
+  "claimbuster:en": {
+    "rows": 702,
+    "confusion_matrix": [
+      [
+        187,
+        164,
+        0
+      ],
+      [
+        22,
+        328,
+        1
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "synthetic_local_teacher:en": {
+    "rows": 37,
+    "confusion_matrix": [
+      [
+        8,
+        1,
+        0
+      ],
+      [
+        0,
+        14,
+        0
+      ],
+      [
+        0,
+        1,
+        13
+      ]
+    ]
+  },
+  "synthetic_local_teacher:hi": {
+    "rows": 37,
+    "confusion_matrix": [
+      [
+        4,
+        5,
+        0
+      ],
+      [
+        0,
+        13,
+        1
+      ],
+      [
+        0,
+        7,
+        7
+      ]
+    ]
+  },
+  "synthetic_local_teacher:hinglish": {
+    "rows": 28,
+    "confusion_matrix": [
+      [
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        10,
+        0
+      ],
+      [
+        0,
+        4,
+        10
+      ]
+    ]
+  },
+  "uci_sms:en": {
+    "rows": 774,
+    "confusion_matrix": [
+      [
+        501,
+        165,
+        11
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        13,
+        83
+      ]
+    ]
+  }
+}

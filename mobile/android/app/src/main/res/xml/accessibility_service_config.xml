@@ -1,0 +1,9 @@
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowContentChanged|typeWindowStateChanged|typeViewScrolled"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:canRetrieveWindowContent="true"
+    android:canTakeScreenshot="true"
+    android:description="@string/helper_description"
+    android:notificationTimeout="200"
+    android:packageNames="com.whatsapp,com.whatsapp.w4b,com.google.android.apps.messaging"
+    android:accessibilityFlags="flagReportViewIds|flagIncludeNotImportantViews" />

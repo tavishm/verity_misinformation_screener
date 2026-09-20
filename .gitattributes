@@ -1,0 +1,16 @@
+# Keep source diffs readable and prevent model/checkpoint content from being
+# treated as text if a maintainer works with a local, ignored artifact.
+*.java text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.csv text eol=lf
+*.onnx binary
+*.bin binary
+*.apk binary
+*.aab binary
+*.safetensors binary
+
+# Do not enable Git LFS here: the required contextual model is fetched and
+# checksum-verified outside Git (see MODEL_SETUP.md).

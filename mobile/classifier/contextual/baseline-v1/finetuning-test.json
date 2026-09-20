@@ -1,0 +1,112 @@
+{
+  "selection": {
+    "personal_threshold": 0.4,
+    "spam_threshold": 0.995,
+    "validation_group_balanced_accuracy": 0.899786962426958,
+    "epoch": 4,
+    "train_loss": 0.06954081136076032
+  },
+  "test_groups": {
+    "claimbuster:en": {
+      "rows": 702,
+      "confusion_matrix": [
+        [
+          277,
+          74,
+          0
+        ],
+        [
+          27,
+          324,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "synthetic_local_teacher:en": {
+      "rows": 37,
+      "confusion_matrix": [
+        [
+          9,
+          0,
+          0
+        ],
+        [
+          0,
+          14,
+          0
+        ],
+        [
+          0,
+          0,
+          14
+        ]
+      ]
+    },
+    "synthetic_local_teacher:hi": {
+      "rows": 37,
+      "confusion_matrix": [
+        [
+          8,
+          0,
+          1
+        ],
+        [
+          0,
+          14,
+          0
+        ],
+        [
+          0,
+          4,
+          10
+        ]
+      ]
+    },
+    "synthetic_local_teacher:hinglish": {
+      "rows": 28,
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          4,
+          10
+        ]
+      ]
+    },
+    "uci_sms:en": {
+      "rows": 774,
+      "confusion_matrix": [
+        [
+          638,
+          32,
+          7
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          95
+        ]
+      ]
+    }
+  },
+  "synthetic_is_not_deployment_evidence": true
+}

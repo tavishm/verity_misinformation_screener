@@ -1,0 +1,7 @@
+Forward Check contextual message routing model
+Base: sentence-transformers/distiluse-base-multilingual-cased-v2
+Revision: bfe45d0732ca50787611c0fe107ba278c7f3f889
+Base model license: Apache-2.0
+Modified by this project: six transformer layers, dense pooling and a three-class routing head. Word and position embeddings remain frozen.
+Classes: personal, public claim, possible spam. Outputs are routing scores, not truth assessments.
+English/Hindi/Romanized Hindi augmentation is synthetic and is not a field evaluation.

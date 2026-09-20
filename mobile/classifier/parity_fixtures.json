@@ -1,0 +1,56 @@
+[
+  {
+    "text": "Hello!",
+    "normalized": "hello!",
+    "feature_count": 16,
+    "indices_sha256": "4f9e335c1edb61feaa18e29377f2001ec626c16704717fc98c920ee6e0aba14c",
+    "action": "personal_skip",
+    "label": "Personal or greeting",
+    "score": 0.0
+  },
+  {
+    "text": "India reported GDP growth of 7.8 percent in 2026.",
+    "normalized": "india reported gdp growth of 7.8 percent in 2026.",
+    "feature_count": 162,
+    "indices_sha256": "a60d876d93dd88ba3f1484fdddd07759769944b8305fe3524b7abc29a3df7c05",
+    "action": "factual_offer",
+    "label": "Factual claim",
+    "score": 0.999770233
+  },
+  {
+    "text": "सरकार ने 2026 में नई योजना की घोषणा की है।",
+    "normalized": "सरकार ने 2026 में नई योजना की घोषणा की है।",
+    "feature_count": 140,
+    "indices_sha256": "f5bae020bb1ae7c7db032e3837cb894696a3a07529a5881d050bab29cf086437",
+    "action": "factual_offer",
+    "label": "Factual claim",
+    "score": 0.990267111
+  },
+  {
+    "text": "See https://example.com/story",
+    "normalized": "see https://example.com/story",
+    "feature_count": 93,
+    "indices_sha256": "e5d62cd650f706eb428bf46d1c8ea9b17a650adb126d08b65bf65c1a76879b51",
+    "action": "offer_link_check",
+    "label": "Link detected",
+    "score": 1.0
+  },
+  {
+    "text": "Can you call me at +91 98765 43210?",
+    "normalized": "can you call me at +91 98765 43210?",
+    "feature_count": 115,
+    "indices_sha256": "931b72fb1d01dea808fc9b94b5adc3c53c08ba6d6d05872f19473cff363ed94f",
+    "action": "personal_skip",
+    "label": "Likely private",
+    "score": 0.0
+  },
+  {
+    "text": "I think this movie is wonderful.",
+    "normalized": "i think this movie is wonderful.",
+    "feature_count": 100,
+    "indices_sha256": "2e45081651e2a432e005e577c2c25b77495fc727d255fd9c377a582446651b61",
+    "action": "opinion_skip",
+    "label": "Opinion",
+    "score": 0.000900067
+  }
+]

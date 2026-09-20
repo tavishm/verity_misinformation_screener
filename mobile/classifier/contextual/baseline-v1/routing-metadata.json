@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "output": "logits",
+  "labels": [
+    "personal",
+    "claim",
+    "scam"
+  ],
+  "max_tokens": 128,
+  "encoder_sha256": "413a7a0f37ccd23104a89d1f74ac8d83287746d7068ab03f569a5a2b0de5c3f8",
+  "parameters": 135129347,
+  "trainable_parameters": 14571011,
+  "bytes": 135747117,
+  "personal_threshold": 0.44000000000000006,
+  "spam_threshold": 0.995,
+  "validation_group_balanced_accuracy": 0.8976204361614615
+}

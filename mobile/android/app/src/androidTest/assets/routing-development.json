@@ -1,0 +1,800 @@
+[
+  {
+    "text": "May this Diwali bring your family joy.",
+    "label": "personal",
+    "language": "en",
+    "group": 0,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "इस दिवाली आपके परिवार में खुशियाँ आएँ।",
+    "label": "personal",
+    "language": "hi",
+    "group": 0,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Is Diwali aapke parivaar mein khushiyan aayein.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 0,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "I am so proud of my daughter for finishing school.",
+    "label": "personal",
+    "language": "en",
+    "group": 1,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "अपनी बेटी की पढ़ाई पूरी होने पर मुझे गर्व है।",
+    "label": "personal",
+    "language": "hi",
+    "group": 1,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Apni beti ki padhai poori hone par mujhe garv hai.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 1,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "I miss you. Please come home soon.",
+    "label": "personal",
+    "language": "en",
+    "group": 2,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "तुम्हारी याद आती है। जल्दी घर आओ।",
+    "label": "personal",
+    "language": "hi",
+    "group": 2,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Tumhari yaad aati hai. Jaldi ghar aao.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 2,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "I have a fever and will rest today.",
+    "label": "personal",
+    "language": "en",
+    "group": 3,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "मुझे बुखार है और मैं आज आराम करूँगा।",
+    "label": "personal",
+    "language": "hi",
+    "group": 3,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Mujhe bukhar hai aur main aaj aaram karunga.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 3,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Please call me after dinner.",
+    "label": "personal",
+    "language": "en",
+    "group": 4,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "खाने के बाद मुझे फ़ोन करना।",
+    "label": "personal",
+    "language": "hi",
+    "group": 4,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Khaane ke baad mujhe phone karna.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 4,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "I prefer tea to coffee.",
+    "label": "personal",
+    "language": "en",
+    "group": 5,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "मुझे कॉफ़ी से ज़्यादा चाय पसंद है।",
+    "label": "personal",
+    "language": "hi",
+    "group": 5,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Mujhe coffee se zyada chai pasand hai.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 5,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Happy anniversary to both of you.",
+    "label": "personal",
+    "language": "en",
+    "group": 6,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "आप दोनों को शादी की सालगिरह मुबारक।",
+    "label": "personal",
+    "language": "hi",
+    "group": 6,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Aap dono ko shaadi ki saalgirah mubarak.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 6,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Never give anyone your banking password.",
+    "label": "personal",
+    "language": "en",
+    "group": 7,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "किसी को अपने बैंक का पासवर्ड मत देना।",
+    "label": "personal",
+    "language": "hi",
+    "group": 7,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Kisi ko apne bank ka password mat dena.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 7,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "The message asking for an OTP is a scam. Ignore it.",
+    "label": "personal",
+    "language": "en",
+    "group": 8,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "ओटीपी माँगने वाला संदेश धोखा है। उसे छोड़ दो।",
+    "label": "personal",
+    "language": "hi",
+    "group": 8,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "OTP maangne wala message dhokha hai. Use chhod do.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 8,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "I just paid the electricity bill.",
+    "label": "personal",
+    "language": "en",
+    "group": 9,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "मैंने अभी बिजली का बिल भरा है।",
+    "label": "personal",
+    "language": "hi",
+    "group": 9,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Maine abhi bijli ka bill bhara hai.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 9,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Mom, do you want me to bring some oranges?",
+    "label": "personal",
+    "language": "en",
+    "group": 10,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "माँ, क्या मैं आपके लिए संतरे लाऊँ?",
+    "label": "personal",
+    "language": "hi",
+    "group": 10,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Maa, kya main aapke liye santre laaun?",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 10,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "I am worried about my exam.",
+    "label": "personal",
+    "language": "en",
+    "group": 11,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "मुझे अपनी परीक्षा की चिंता है।",
+    "label": "personal",
+    "language": "hi",
+    "group": 11,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Mujhe apni pariksha ki chinta hai.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 11,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "You do not need to send me money.",
+    "label": "personal",
+    "language": "en",
+    "group": 12,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "तुम्हें मुझे पैसे भेजने की ज़रूरत नहीं है।",
+    "label": "personal",
+    "language": "hi",
+    "group": 12,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Tumhe mujhe paise bhejne ki zaroorat nahi hai.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 12,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "The movie felt too long to me.",
+    "label": "personal",
+    "language": "en",
+    "group": 13,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "मुझे फ़िल्म बहुत लंबी लगी।",
+    "label": "personal",
+    "language": "hi",
+    "group": 13,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Mujhe film bahut lambi lagi.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 13,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "My train arrives at eight. I will call you.",
+    "label": "personal",
+    "language": "en",
+    "group": 14,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "मेरी ट्रेन आठ बजे आती है। मैं फ़ोन करूँगा।",
+    "label": "personal",
+    "language": "hi",
+    "group": 14,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Meri train aath baje aati hai. Main phone karunga.",
+    "label": "personal",
+    "language": "hinglish",
+    "group": 14,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "The moon produces its own light.",
+    "label": "claim",
+    "language": "en",
+    "group": 15,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "चाँद अपनी रोशनी खुद पैदा करता है।",
+    "label": "claim",
+    "language": "hi",
+    "group": 15,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Chaand apni roshni khud paida karta hai.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 15,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Drinking cold water damages the heart.",
+    "label": "claim",
+    "language": "en",
+    "group": 16,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "ठंडा पानी पीने से दिल खराब हो जाता है।",
+    "label": "claim",
+    "language": "hi",
+    "group": 16,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Thanda paani peene se dil kharab ho jaata hai.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 16,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Eating chicken causes brain cells to die.",
+    "label": "claim",
+    "language": "en",
+    "group": 17,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "चिकन खाने से दिमाग की कोशिकाएँ मर जाती हैं।",
+    "label": "claim",
+    "language": "hi",
+    "group": 17,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Chicken khaane se dimaag ki koshikayein mar jaati hain.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 17,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Antibiotics cure every viral infection.",
+    "label": "claim",
+    "language": "en",
+    "group": 18,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "एंटीबायोटिक हर वायरल संक्रमण ठीक कर देती है।",
+    "label": "claim",
+    "language": "hi",
+    "group": 18,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Antibiotic har viral infection theek kar deti hai.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 18,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "The government has abolished all income tax.",
+    "label": "claim",
+    "language": "en",
+    "group": 19,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "सरकार ने पूरा आयकर खत्म कर दिया है।",
+    "label": "claim",
+    "language": "hi",
+    "group": 19,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Sarkar ne poora income tax khatam kar diya hai.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 19,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "A public leader died this morning.",
+    "label": "claim",
+    "language": "en",
+    "group": 20,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "एक बड़े नेता का आज सुबह निधन हो गया।",
+    "label": "claim",
+    "language": "hi",
+    "group": 20,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Ek bade neta ka aaj subah nidhan ho gaya.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 20,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Happy birthday! By the way, microwaves make food radioactive.",
+    "label": "claim",
+    "language": "en",
+    "group": 21,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "जन्मदिन मुबारक! वैसे माइक्रोवेव खाने को रेडियोधर्मी बना देती है।",
+    "label": "claim",
+    "language": "hi",
+    "group": 21,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Janamdin mubarak! Waise microwave khaane ko radioactive bana deti hai.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 21,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "I think salt water can cure cancer.",
+    "label": "claim",
+    "language": "en",
+    "group": 22,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "मुझे लगता है नमक का पानी कैंसर ठीक कर सकता है।",
+    "label": "claim",
+    "language": "hi",
+    "group": 22,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Mujhe lagta hai namak ka paani cancer theek kar sakta hai.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 22,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "No vaccine prevents any disease.",
+    "label": "claim",
+    "language": "en",
+    "group": 23,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "कोई भी टीका किसी बीमारी से नहीं बचाता।",
+    "label": "claim",
+    "language": "hi",
+    "group": 23,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Koi bhi teeka kisi bimaari se nahi bachata.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 23,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Plants need sunlight to make food.",
+    "label": "claim",
+    "language": "en",
+    "group": 24,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "पौधों को भोजन बनाने के लिए सूरज की रोशनी चाहिए।",
+    "label": "claim",
+    "language": "hi",
+    "group": 24,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Paudhon ko bhojan banaane ke liye suraj ki roshni chahiye.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 24,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Mosquitoes transmit dengue.",
+    "label": "claim",
+    "language": "en",
+    "group": 25,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "मच्छर डेंगू फैलाते हैं।",
+    "label": "claim",
+    "language": "hi",
+    "group": 25,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Machhar dengue phailaate hain.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 25,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "All banknotes will become invalid tomorrow.",
+    "label": "claim",
+    "language": "en",
+    "group": 26,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "कल से सभी नोट बेकार हो जाएँगे।",
+    "label": "claim",
+    "language": "hi",
+    "group": 26,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Kal se saare note bekaar ho jaayenge.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 26,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Lemon juice removes all pesticides from vegetables.",
+    "label": "claim",
+    "language": "en",
+    "group": 27,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "नींबू का रस सब्जियों से सारे कीटनाशक हटा देता है।",
+    "label": "claim",
+    "language": "hi",
+    "group": 27,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Nimbu ka ras sabziyon se saare keetnashak hata deta hai.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 27,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "The human body has more than one lung.",
+    "label": "claim",
+    "language": "en",
+    "group": 28,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "इंसान के शरीर में एक से ज़्यादा फेफड़े होते हैं।",
+    "label": "claim",
+    "language": "hi",
+    "group": 28,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Insaan ke sharir mein ek se zyada phephde hote hain.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 28,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Taking extra vitamins means you never need sleep.",
+    "label": "claim",
+    "language": "en",
+    "group": 29,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "ज़्यादा विटामिन लेने पर नींद की ज़रूरत नहीं रहती।",
+    "label": "claim",
+    "language": "hi",
+    "group": 29,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Zyada vitamin lene par neend ki zaroorat nahi rehti.",
+    "label": "claim",
+    "language": "hinglish",
+    "group": 29,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Send your bank password so we can release your refund.",
+    "label": "scam",
+    "language": "en",
+    "group": 30,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "रिफंड पाने के लिए अपने बैंक का पासवर्ड भेजें।",
+    "label": "scam",
+    "language": "hi",
+    "group": 30,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Refund paane ke liye apne bank ka password bhejein.",
+    "label": "scam",
+    "language": "hinglish",
+    "group": 30,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Share the OTP you just received to stop your account being blocked.",
+    "label": "scam",
+    "language": "en",
+    "group": 31,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "खाता बंद होने से बचाने के लिए अभी आया ओटीपी बताइए।",
+    "label": "scam",
+    "language": "hi",
+    "group": 31,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Account band hone se bachaane ke liye abhi aaya OTP bataiye.",
+    "label": "scam",
+    "language": "hinglish",
+    "group": 31,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "You won a lottery. Pay a processing fee to collect the prize.",
+    "label": "scam",
+    "language": "en",
+    "group": 32,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "आपकी लॉटरी लगी है। इनाम लेने के लिए पहले फीस भरें।",
+    "label": "scam",
+    "language": "hi",
+    "group": 32,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Aapki lottery lagi hai. Inaam lene ke liye pehle fees bharein.",
+    "label": "scam",
+    "language": "hinglish",
+    "group": 32,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Send your UPI PIN to our verification team.",
+    "label": "scam",
+    "language": "en",
+    "group": 33,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "जाँच टीम को अपना यूपीआई पिन भेजें।",
+    "label": "scam",
+    "language": "hi",
+    "group": 33,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Verification team ko apna UPI PIN bhejein.",
+    "label": "scam",
+    "language": "hinglish",
+    "group": 33,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Install this remote access app and tell me the connection code.",
+    "label": "scam",
+    "language": "en",
+    "group": 34,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "यह रिमोट एक्सेस ऐप लगाइए और मुझे कनेक्शन कोड बताइए।",
+    "label": "scam",
+    "language": "hi",
+    "group": 34,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Yeh remote access app lagaiye aur mujhe connection code bataiye.",
+    "label": "scam",
+    "language": "hinglish",
+    "group": 34,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Your new job is guaranteed once you pay the registration fee.",
+    "label": "scam",
+    "language": "en",
+    "group": 35,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "रजिस्ट्रेशन फीस भरते ही आपकी नौकरी पक्की है।",
+    "label": "scam",
+    "language": "hi",
+    "group": 35,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Registration fees bharte hi aapki naukri pakki hai.",
+    "label": "scam",
+    "language": "hinglish",
+    "group": 35,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Reply with your card number, expiry date, and security code.",
+    "label": "scam",
+    "language": "en",
+    "group": 36,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "अपने कार्ड का नंबर, आखिरी तारीख और सुरक्षा कोड भेजें।",
+    "label": "scam",
+    "language": "hi",
+    "group": 36,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Apne card ka number, expiry date aur security code bhejein.",
+    "label": "scam",
+    "language": "hinglish",
+    "group": 36,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Double your money in a week with no risk. Transfer funds now.",
+    "label": "scam",
+    "language": "en",
+    "group": 37,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "बिना जोखिम हफ्ते भर में पैसा दोगुना। अभी पैसे भेजें।",
+    "label": "scam",
+    "language": "hi",
+    "group": 37,
+    "source": "assistant-authored-development-challenge"
+  },
+  {
+    "text": "Bina risk hafte bhar mein paisa doguna. Abhi paise bhejein.",
+    "label": "scam",
+    "language": "hinglish",
+    "group": 37,
+    "source": "assistant-authored-development-challenge"
+  }
+]

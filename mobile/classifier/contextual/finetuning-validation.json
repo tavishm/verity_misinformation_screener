@@ -1,0 +1,44 @@
+[
+  {
+    "personal_threshold": 0.4,
+    "spam_threshold": 0.8200000000000004,
+    "validation_group_balanced_accuracy": 0.9611445605614966,
+    "epoch": 1,
+    "train_loss": 0.10083955456678975
+  },
+  {
+    "personal_threshold": 0.4,
+    "spam_threshold": 0.9000000000000005,
+    "validation_group_balanced_accuracy": 0.9681234658870178,
+    "epoch": 2,
+    "train_loss": 0.023757866435444155
+  },
+  {
+    "personal_threshold": 0.4,
+    "spam_threshold": 0.4,
+    "validation_group_balanced_accuracy": 0.9651823900890657,
+    "epoch": 3,
+    "train_loss": 0.014320566799341981
+  },
+  {
+    "personal_threshold": 0.4,
+    "spam_threshold": 0.7200000000000003,
+    "validation_group_balanced_accuracy": 0.966516904359465,
+    "epoch": 4,
+    "train_loss": 0.011770809007113662
+  },
+  {
+    "personal_threshold": 0.4,
+    "spam_threshold": 0.5000000000000001,
+    "validation_group_balanced_accuracy": 0.9715021530897481,
+    "epoch": 5,
+    "train_loss": 0.01679023641447606
+  },
+  {
+    "personal_threshold": 0.9800000000000005,
+    "spam_threshold": 0.4,
+    "validation_group_balanced_accuracy": 0.9644770067211436,
+    "epoch": 6,
+    "train_loss": 0.01283595646145285
+  }
+]

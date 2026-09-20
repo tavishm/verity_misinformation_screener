@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Evidence Check — X & Reddit",
+  "short_name": "Evidence Check",
+  "version": "0.3.0",
+  "minimum_chrome_version": "116",
+  "description": "Evidence-backed text assessments on X and Reddit, with source passages, manual checks and optional automatic checking.",
+  "permissions": ["storage"],
+  "host_permissions": ["http://127.0.0.1:8870/*"],
+  "background": {"service_worker": "background.js"},
+  "icons": {"16":"icons/icon16.png","32":"icons/icon32.png","48":"icons/icon48.png","128":"icons/icon128.png"},
+  "action": {"default_popup": "popup.html", "default_title": "Evidence Check", "default_icon": {"16":"icons/icon16.png","32":"icons/icon32.png"}},
+  "options_page": "options.html",
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'none'; connect-src http://127.0.0.1:8870"},
+  "content_scripts": [{
+    "matches": ["https://x.com/*", "https://www.x.com/*", "https://twitter.com/*", "https://www.twitter.com/*", "https://reddit.com/*", "https://www.reddit.com/*", "https://old.reddit.com/*", "https://new.reddit.com/*"],
+    "js": ["guards.js", "platforms.js", "content.js"],
+    "run_at": "document_idle",
+    "all_frames": false
+  }]
+}

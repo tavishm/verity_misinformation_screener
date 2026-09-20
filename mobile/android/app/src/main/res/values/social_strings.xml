@@ -1,0 +1,4 @@
+<resources>
+    <string name="social_helper_name">Verity · Social</string>
+    <string name="social_helper_description">Checks public posts you pause on in the apps you choose. Turn screening on in Verity first. Selected post text is sent online. This helper does not check WhatsApp.</string>
+</resources>

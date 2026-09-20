@@ -1,0 +1,105 @@
+{
+  "dataset_kind": "source_derived_development_examples",
+  "created_at": "2026-09-19",
+  "labeling": "No expected verdicts or truth labels are supplied.",
+  "representation_warning": "Synthetic development inputs derived from official documents. They are not actual X posts, sampled social-media content, or a representative feed.",
+  "scope_note": "The linked documents establish what an official source announced or required; they do not independently prove every underlying assertion.",
+  "examples": [
+    {
+      "id": "dev-politics-001",
+      "input_type": "faithful_factual_statement",
+      "input": "A September 2026 presidential determination identified India as a major drug transit or major illicit drug producing country.",
+      "source_evidence_id": "federal-register:2026-19251",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/18/2026-19251/presidential-determination-on-major-drug-transit-or-major-illicit-drug-producing-countries-for",
+      "source_passage": "I hereby identify the following countries as major drug transit or major illicit drug producing countries: Afghanistan, The Bahamas, Belize, Bolivia, Burma, the People's Republic of China (PRC), Colombia, Costa Rica, the Dominican Republic, Ecuador, El Salvador, Guatemala, Haiti, Honduras, India, Jamaica, Laos, Mexico, Nicaragua, Pakistan, Panama, Peru, and Venezuela."
+    },
+    {
+      "id": "dev-politics-002",
+      "input_type": "changed_detail_negation",
+      "input": "The September 2026 presidential determination did not identify India as a major drug transit or major illicit drug producing country.",
+      "source_evidence_id": "federal-register:2026-19251",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/18/2026-19251/presidential-determination-on-major-drug-transit-or-major-illicit-drug-producing-countries-for",
+      "source_passage": "I hereby identify the following countries as major drug transit or major illicit drug producing countries: Afghanistan, The Bahamas, Belize, Bolivia, Burma, the People's Republic of China (PRC), Colombia, Costa Rica, the Dominican Republic, Ecuador, El Salvador, Guatemala, Haiti, Honduras, India, Jamaica, Laos, Mexico, Nicaragua, Pakistan, Panama, Peru, and Venezuela."
+    },
+    {
+      "id": "dev-politics-003",
+      "input_type": "quote_wrapper",
+      "input": "A post quotes the determination as saying, “I hereby identify the following countries as major drug transit or major illicit drug producing countries,” before listing India among the countries.",
+      "source_evidence_id": "federal-register:2026-19251",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/18/2026-19251/presidential-determination-on-major-drug-transit-or-major-illicit-drug-producing-countries-for",
+      "source_passage": "I hereby identify the following countries as major drug transit or major illicit drug producing countries: Afghanistan, The Bahamas, Belize, Bolivia, Burma, the People's Republic of China (PRC), Colombia, Costa Rica, the Dominican Republic, Ecuador, El Salvador, Guatemala, Haiti, Honduras, India, Jamaica, Laos, Mexico, Nicaragua, Pakistan, Panama, Peru, and Venezuela."
+    },
+    {
+      "id": "dev-politics-004",
+      "input_type": "faithful_paraphrase",
+      "input": "A presidential notice continued for one year the national emergency declared after the September 11 attacks.",
+      "source_evidence_id": "federal-register:2026-18589",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/10/2026-18589/continuation-of-the-national-emergency-with-respect-to-certain-terrorist-attacks",
+      "source_passage": "I am continuing for 1 year the national emergency previously declared on September 14, 2001, in Proclamation 7463, with respect to the terrorist attacks of September 11, 2001, and the continuing and immediate threat of further attacks on the United States."
+    },
+    {
+      "id": "dev-politics-005",
+      "input_type": "changed_duration",
+      "input": "A presidential notice continued the post-September 11 national emergency for five years.",
+      "source_evidence_id": "federal-register:2026-18589",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/10/2026-18589/continuation-of-the-national-emergency-with-respect-to-certain-terrorist-attacks",
+      "source_passage": "I am continuing for 1 year the national emergency previously declared on September 14, 2001, in Proclamation 7463, with respect to the terrorist attacks of September 11, 2001, and the continuing and immediate threat of further attacks on the United States."
+    },
+    {
+      "id": "dev-politics-006",
+      "input_type": "faithful_factual_statement",
+      "input": "The State Department amended ITAR to remove certain uncrewed underwater vehicles from the U.S. Munitions List.",
+      "source_evidence_id": "federal-register:2026-19211",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/18/2026-19211/international-traffic-in-arms-regulations-modification-of-us-munitions-list-category-xxa",
+      "source_passage": "The Department of State (the Department) amends the International Traffic in Arms Regulations (ITAR) to remove from the U.S. Munitions List (USML) certain uncrewed underwater vehicles (UUVs) and make conforming changes to related controls."
+    },
+    {
+      "id": "dev-politics-007",
+      "input_type": "changed_object",
+      "input": "The State Department amended ITAR to remove certain crewed aircraft from the U.S. Munitions List.",
+      "source_evidence_id": "federal-register:2026-19211",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/18/2026-19211/international-traffic-in-arms-regulations-modification-of-us-munitions-list-category-xxa",
+      "source_passage": "The Department of State (the Department) amends the International Traffic in Arms Regulations (ITAR) to remove from the U.S. Munitions List (USML) certain uncrewed underwater vehicles (UUVs) and make conforming changes to related controls."
+    },
+    {
+      "id": "dev-politics-008",
+      "input_type": "faithful_attribution",
+      "input": "According to a State Department final rule, Saudi Arabia and Peru were added to the major non-NATO ally list.",
+      "source_evidence_id": "federal-register:2026-19161",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/18/2026-19161/international-traffic-in-arms-regulations-clarifying-policies-of-denial-updating-the-major-non-nato",
+      "source_passage": "The Department of State is amending the International Traffic in Arms Regulations (ITAR) to clarify certain policy-of-denial provisions, update country policies for Ethiopia and Somalia, add Saudi Arabia and Peru to the list of major non-NATO allies, and make other miscellaneous corrections."
+    },
+    {
+      "id": "dev-politics-009",
+      "input_type": "changed_entity",
+      "input": "A State Department final rule added Canada and Peru to the major non-NATO ally list.",
+      "source_evidence_id": "federal-register:2026-19161",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/18/2026-19161/international-traffic-in-arms-regulations-clarifying-policies-of-denial-updating-the-major-non-nato",
+      "source_passage": "The Department of State is amending the International Traffic in Arms Regulations (ITAR) to clarify certain policy-of-denial provisions, update country policies for Ethiopia and Somalia, add Saudi Arabia and Peru to the list of major non-NATO allies, and make other miscellaneous corrections."
+    },
+    {
+      "id": "dev-politics-010",
+      "input_type": "faithful_factual_statement",
+      "input": "A Department of Energy notice says the 2022 manufactured-housing energy standards rule has no legal effect after enactment of the ROAD Act.",
+      "source_evidence_id": "federal-register:2026-19154",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/18/2026-19154/energy-conservation-program-energy-conservation-standards-for-manufactured-housing",
+      "source_passage": "In this notification, the U.S. Department of Energy (“DOE” or “the Department”) is providing notice that the Department's Energy Conservation Standards for Manufactured Housing final rule published in the Federal Register on May 31, 2022, has no legal effect in light of the enactment of the 21st Century ROAD to Housing Act (“ROAD Act”)."
+    },
+    {
+      "id": "dev-politics-011",
+      "input_type": "negation",
+      "input": "The Department of Energy says its 2022 manufactured-housing energy standards remain legally in effect after the ROAD Act.",
+      "source_evidence_id": "federal-register:2026-19154",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/18/2026-19154/energy-conservation-program-energy-conservation-standards-for-manufactured-housing",
+      "source_passage": "In this notification, the U.S. Department of Energy (“DOE” or “the Department”) is providing notice that the Department's Energy Conservation Standards for Manufactured Housing final rule published in the Federal Register on May 31, 2022, has no legal effect in light of the enactment of the 21st Century ROAD to Housing Act (“ROAD Act”)."
+    },
+    {
+      "id": "dev-politics-012",
+      "input_type": "quote_wrapper",
+      "input": "The DOE notice is being shared with the quote: “has no legal effect in light of the enactment of the 21st Century ROAD to Housing Act.”",
+      "source_evidence_id": "federal-register:2026-19154",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/18/2026-19154/energy-conservation-program-energy-conservation-standards-for-manufactured-housing",
+      "source_passage": "In this notification, the U.S. Department of Energy (“DOE” or “the Department”) is providing notice that the Department's Energy Conservation Standards for Manufactured Housing final rule published in the Federal Register on May 31, 2022, has no legal effect in light of the enactment of the 21st Century ROAD to Housing Act (“ROAD Act”)."
+    }
+  ]
+}

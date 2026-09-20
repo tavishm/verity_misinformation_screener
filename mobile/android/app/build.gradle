@@ -1,0 +1,54 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'org.fairc.forwardcheck'
+    compileSdk 35
+    buildToolsVersion "35.0.0"
+    defaultConfig {
+        applicationId 'org.fairc.forwardcheck'
+        minSdk 30
+        targetSdk 35
+        versionCode 6
+        versionName '0.4.1-verity'
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        ndk { abiFilters 'arm64-v8a', 'x86_64' }
+    }
+    signingConfigs {
+        demo {
+            storeFile file('../../../.cache/android/debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+    buildTypes {
+        debug { signingConfig signingConfigs.demo }
+        release { signingConfig signingConfigs.demo; minifyEnabled false }
+    }
+    sourceSets {
+        main { java.srcDirs += '../src'; assets.srcDirs = ['../assets'] }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    packaging { resources.excludes += ['META-INF/DEPENDENCIES', 'META-INF/LICENSE*', 'META-INF/NOTICE*'] }
+    androidResources { noCompress += ['onnx', 'bin'] }
+}
+
+dependencies {
+    implementation 'com.google.mlkit:text-recognition:16.0.1'
+    implementation 'com.google.mlkit:text-recognition-devanagari:16.0.1'
+    // SOCIAL SCREENING compatibility fix: the 1.20 JNI wrapper has 4 KB ELF
+    // alignment and triggers Android's 16 KB warning. Both 64-bit ABIs in
+    // this pinned AAR have verified 16 KB LOAD alignment. Model is unchanged.
+    implementation 'com.microsoft.onnxruntime:onnxruntime-android:1.23.2'
+    implementation 'org.jsoup:jsoup:1.18.3'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.json:json:20240303'
+    androidTestImplementation 'androidx.test:runner:1.6.2'
+    androidTestImplementation 'androidx.test:rules:1.6.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.3.0'
+}

@@ -1,0 +1,41 @@
+{
+  "verified_on": "2026-09-19",
+  "currency": "USD",
+  "sources": {
+    "research_models": "https://dev.meta.ai/docs/pricing-rate-limits",
+    "triage_model": "https://ai.google.dev/gemini-api/docs/pricing",
+    "external_search": "https://brave.com/search/api/",
+    "media_search": "https://cloud.google.com/vision/pricing",
+    "x_reads": "https://docs.x.com/x-api/getting-started/pricing"
+  },
+  "rates": {
+    "standard": {"input_per_million": 1.25, "output_per_million": 4.25},
+    "contributor": {"input_per_million": 0.10, "output_per_million": 0.20},
+    "triage": {"model": "gemini-3.1-flash-lite", "input_per_million": 0.25, "output_per_million": 1.50},
+    "search_per_thousand": {"native": 2.50, "brave": 5.00},
+    "web_detection_per_thousand": 3.50,
+    "x_post_read": 0.005
+  },
+  "jobs": {
+    "triage": {"input_tokens": 500, "output_tokens": 200, "search_queries": 0},
+    "quick": {"input_tokens": 3000, "output_tokens": 1000, "search_queries": 2},
+    "deep": {"input_tokens": 20000, "output_tokens": 5000, "search_queries": 8}
+  },
+  "scenarios": {
+    "pilot": {"budget": 10, "search_provider": "brave", "triage": 1000, "quick": 300, "deep": 10, "media_units": 100, "x_reads": 100, "infrastructure_daily": 1},
+    "native-pilot": {"budget": 10, "search_provider": "native", "triage": 1000, "quick": 400, "deep": 20, "media_units": 100, "x_reads": 100, "infrastructure_daily": 1},
+    "scale-100": {"budget": 100, "search_provider": "brave", "triage": 10000, "quick": 3000, "deep": 100, "media_units": 1000, "x_reads": 1000, "infrastructure_daily": 3},
+    "scale-1000": {"budget": 1000, "search_provider": "brave", "triage": 100000, "quick": 30000, "deep": 1000, "media_units": 10000, "x_reads": 10000, "infrastructure_daily": 15}
+  },
+  "caveats": [
+    "Illustrative workload envelopes, not measured accuracy, throughput or latency.",
+    "Deep reviews are additional work on a subset of quick reviews, not extra unique claims.",
+    "Token counts include all calls, source reading and hidden reasoning; retries consume the same budget.",
+    "Contributor allows training on requests and requires appropriate content rights and disclosures.",
+    "Native search query counts are assumptions until enforceable limits are verified.",
+    "Infrastructure is an allowance for hosting, storage, CPU, OCR, logs, bandwidth and notifications, not a vendor quote.",
+    "Platform license fees remain unknown until explicitly supplied. Tax, labor and development are excluded.",
+    "No free credits, batch discounts or prompt-cache discounts are assumed.",
+    "The calculator does not execute checks, enforce provider billing limits, or forecast feed coverage."
+  ]
+}

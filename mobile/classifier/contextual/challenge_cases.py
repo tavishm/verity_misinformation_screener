@@ -1,0 +1,46 @@
+"""Independent, constructed behavioral checks. Not a representative accuracy benchmark."""
+CASES=[
+('personal','May this Diwali bring your family joy.','इस दिवाली आपके परिवार में खुशियाँ आएँ।','Is Diwali aapke parivaar mein khushiyan aayein.'),
+('personal','I am so proud of my daughter for finishing school.','अपनी बेटी की पढ़ाई पूरी होने पर मुझे गर्व है।','Apni beti ki padhai poori hone par mujhe garv hai.'),
+('personal','I miss you. Please come home soon.','तुम्हारी याद आती है। जल्दी घर आओ।','Tumhari yaad aati hai. Jaldi ghar aao.'),
+('personal','I have a fever and will rest today.','मुझे बुखार है और मैं आज आराम करूँगा।','Mujhe bukhar hai aur main aaj aaram karunga.'),
+('personal','Please call me after dinner.','खाने के बाद मुझे फ़ोन करना।','Khaane ke baad mujhe phone karna.'),
+('personal','I prefer tea to coffee.','मुझे कॉफ़ी से ज़्यादा चाय पसंद है।','Mujhe coffee se zyada chai pasand hai.'),
+('personal','Happy anniversary to both of you.','आप दोनों को शादी की सालगिरह मुबारक।','Aap dono ko shaadi ki saalgirah mubarak.'),
+('personal','Never give anyone your banking password.','किसी को अपने बैंक का पासवर्ड मत देना।','Kisi ko apne bank ka password mat dena.'),
+('personal','The message asking for an OTP is a scam. Ignore it.','ओटीपी माँगने वाला संदेश धोखा है। उसे छोड़ दो।','OTP maangne wala message dhokha hai. Use chhod do.'),
+('personal','I just paid the electricity bill.','मैंने अभी बिजली का बिल भरा है।','Maine abhi bijli ka bill bhara hai.'),
+('personal','Mom, do you want me to bring some oranges?','माँ, क्या मैं आपके लिए संतरे लाऊँ?','Maa, kya main aapke liye santre laaun?'),
+('personal','I am worried about my exam.','मुझे अपनी परीक्षा की चिंता है।','Mujhe apni pariksha ki chinta hai.'),
+('personal','You do not need to send me money.','तुम्हें मुझे पैसे भेजने की ज़रूरत नहीं है।','Tumhe mujhe paise bhejne ki zaroorat nahi hai.'),
+('personal','The movie felt too long to me.','मुझे फ़िल्म बहुत लंबी लगी।','Mujhe film bahut lambi lagi.'),
+('personal','My train arrives at eight. I will call you.','मेरी ट्रेन आठ बजे आती है। मैं फ़ोन करूँगा।','Meri train aath baje aati hai. Main phone karunga.'),
+('claim','The moon produces its own light.','चाँद अपनी रोशनी खुद पैदा करता है।','Chaand apni roshni khud paida karta hai.'),
+('claim','Drinking cold water damages the heart.','ठंडा पानी पीने से दिल खराब हो जाता है।','Thanda paani peene se dil kharab ho jaata hai.'),
+('claim','Eating chicken causes brain cells to die.','चिकन खाने से दिमाग की कोशिकाएँ मर जाती हैं।','Chicken khaane se dimaag ki koshikayein mar jaati hain.'),
+('claim','Antibiotics cure every viral infection.','एंटीबायोटिक हर वायरल संक्रमण ठीक कर देती है।','Antibiotic har viral infection theek kar deti hai.'),
+('claim','The government has abolished all income tax.','सरकार ने पूरा आयकर खत्म कर दिया है।','Sarkar ne poora income tax khatam kar diya hai.'),
+('claim','A public leader died this morning.','एक बड़े नेता का आज सुबह निधन हो गया।','Ek bade neta ka aaj subah nidhan ho gaya.'),
+('claim','Happy birthday! By the way, microwaves make food radioactive.','जन्मदिन मुबारक! वैसे माइक्रोवेव खाने को रेडियोधर्मी बना देती है।','Janamdin mubarak! Waise microwave khaane ko radioactive bana deti hai.'),
+('claim','I think salt water can cure cancer.','मुझे लगता है नमक का पानी कैंसर ठीक कर सकता है।','Mujhe lagta hai namak ka paani cancer theek kar sakta hai.'),
+('claim','No vaccine prevents any disease.','कोई भी टीका किसी बीमारी से नहीं बचाता।','Koi bhi teeka kisi bimaari se nahi bachata.'),
+('claim','Plants need sunlight to make food.','पौधों को भोजन बनाने के लिए सूरज की रोशनी चाहिए।','Paudhon ko bhojan banaane ke liye suraj ki roshni chahiye.'),
+('claim','Mosquitoes transmit dengue.','मच्छर डेंगू फैलाते हैं।','Machhar dengue phailaate hain.'),
+('claim','All banknotes will become invalid tomorrow.','कल से सभी नोट बेकार हो जाएँगे।','Kal se saare note bekaar ho jaayenge.'),
+('claim','Lemon juice removes all pesticides from vegetables.','नींबू का रस सब्जियों से सारे कीटनाशक हटा देता है।','Nimbu ka ras sabziyon se saare keetnashak hata deta hai.'),
+('claim','The human body has more than one lung.','इंसान के शरीर में एक से ज़्यादा फेफड़े होते हैं।','Insaan ke sharir mein ek se zyada phephde hote hain.'),
+('claim','Taking extra vitamins means you never need sleep.','ज़्यादा विटामिन लेने पर नींद की ज़रूरत नहीं रहती।','Zyada vitamin lene par neend ki zaroorat nahi rehti.'),
+('scam','Send your bank password so we can release your refund.','रिफंड पाने के लिए अपने बैंक का पासवर्ड भेजें।','Refund paane ke liye apne bank ka password bhejein.'),
+('scam','Share the OTP you just received to stop your account being blocked.','खाता बंद होने से बचाने के लिए अभी आया ओटीपी बताइए।','Account band hone se bachaane ke liye abhi aaya OTP bataiye.'),
+('scam','You won a lottery. Pay a processing fee to collect the prize.','आपकी लॉटरी लगी है। इनाम लेने के लिए पहले फीस भरें।','Aapki lottery lagi hai. Inaam lene ke liye pehle fees bharein.'),
+('scam','Send your UPI PIN to our verification team.','जाँच टीम को अपना यूपीआई पिन भेजें।','Verification team ko apna UPI PIN bhejein.'),
+('scam','Install this remote access app and tell me the connection code.','यह रिमोट एक्सेस ऐप लगाइए और मुझे कनेक्शन कोड बताइए।','Yeh remote access app lagaiye aur mujhe connection code bataiye.'),
+('scam','Your new job is guaranteed once you pay the registration fee.','रजिस्ट्रेशन फीस भरते ही आपकी नौकरी पक्की है।','Registration fees bharte hi aapki naukri pakki hai.'),
+('scam','Reply with your card number, expiry date, and security code.','अपने कार्ड का नंबर, आखिरी तारीख और सुरक्षा कोड भेजें।','Apne card ka number, expiry date aur security code bhejein.'),
+('scam','Double your money in a week with no risk. Transfer funds now.','बिना जोखिम हफ्ते भर में पैसा दोगुना। अभी पैसे भेजें।','Bina risk hafte bhar mein paisa doguna. Abhi paise bhejein.'),
+]
+if __name__=='__main__':
+ import json
+ from pathlib import Path
+ rows=[dict(text=text,label=label,language=lang,group=i,source='assistant-authored-development-challenge') for i,(label,*texts) in enumerate(CASES) for lang,text in zip(['en','hi','hinglish'],texts)]
+ Path(__file__).with_name('challenge.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2)+'\n')

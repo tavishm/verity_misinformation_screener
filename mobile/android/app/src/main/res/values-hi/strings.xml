@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Verity</string>
+    <string name="helper_description">WhatsApp पर दिख रहे फ़ॉरवर्ड और अनजान या चुने हुए संपर्कों के संदेश जाँचें। SMS की चेतावनी चालू होने पर Google Messages में अनजान लोगों के धोखाधड़ी जैसे संदेशों पर चेतावनी दें। यह जाँच फ़ोन पर होती है। SMS कहीं भेजा नहीं जाता। ऑनलाइन जाँच के लिए केवल आपकी अनुमति वाला WhatsApp संदेश भेजा जाता है।</string>
+</resources>

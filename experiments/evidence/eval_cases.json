@@ -1,0 +1,492 @@
+{
+  "schema_version": 1,
+  "name": "Evidence-derived text verification development checks",
+  "created_at": "2026-09-19",
+  "corpus_sha256": "df981861a6ac9499062a9093994be646ce60abb91502f1c120c5b5e557cc1a33",
+  "scope": "Handwritten development checks derived from the fixed 30-document evidence snapshot, submitted as new text claims to the actual API. Expected labels describe support in this corpus, not independently adjudicated world truth. This is neither a held-out accuracy benchmark nor a social-feed coverage sample.",
+  "selection_notes": [
+    "Assertions were selected after reading sources and before running these evaluations. Expected outcomes are not altered based on model results.",
+    "Most resolvable checks use RBI primary feed text; two use explicitly attributed claims from existing Hindi fact-check articles.",
+    "The Hindi corpus has ten Alt News articles but no fetched Hindi RBI or PIB documents. The Hindi RBI case tests retrieval of English evidence.",
+    "English/Hindi matched evidence-gap and amount cases are related controls, not independent samples.",
+    "Exact verdict counts and expected source URLs are checked mechanically. Valid claim splitting can require human review; matching counts and citations does not establish semantic correctness.",
+    "Artificial has_media input checks scope handling only; there are no images, videos, social media acquisition, paid judges, or real user posts in this suite."
+  ],
+  "references": {
+    "altnews_hi:690a1260804582a8": {
+      "source_url": "https://www.altnews.in/hindi/glacier-burst-video-from-alaska-falsely-viral-as-nepal-flash-flood-trigger/",
+      "title": "अलास्का के ग्लेशियर फटने का वीडियो नेपाल में अचानक आई बाढ़ की वजह बताकर वायरल",
+      "publisher": "Alt News",
+      "language": "hi",
+      "source_type": "publisher_article",
+      "text_sha256": "0063df7bc4497627aa0581c6651ded0d197da100759f2432413e4dbfb0d59106",
+      "published_at": "2026-09-11T06:17:36+00:00",
+      "published_at_raw": "Fri, 11 Sep 2026 06:17:36 +0000",
+      "fetched_at": "2026-09-19T13:52:10.933969+00:00"
+    },
+    "altnews_hi:4ed0d90afb17cca3": {
+      "source_url": "https://www.altnews.in/hindi/viral-video-of-man-dancing-with-glass-on-head-is-not-ram-mandir-trusts-new-ceo-jitendra-mishra/",
+      "title": "वायरल वीडियो में सिर पर ग्लास रखकर डांस रहा शख्स राम मंदिर ट्रस्ट के नए CEO जितेंद्र मिश्रा नहीं हैं",
+      "publisher": "Alt News",
+      "language": "hi",
+      "source_type": "publisher_article",
+      "text_sha256": "56547efe0fab5f88c5c81a848047e31d627f53e988926af7cdd711a60bdc7e9b",
+      "published_at": "2026-09-08T09:46:25+00:00",
+      "published_at_raw": "Tue, 08 Sep 2026 09:46:25 +0000",
+      "fetched_at": "2026-09-19T13:52:10.933969+00:00"
+    },
+    "rbi_releases:c45a73982905beb5": {
+      "source_url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63628",
+      "title": "Auction of State Government Securities",
+      "publisher": "Reserve Bank of India",
+      "language": "en",
+      "source_type": "official_release_feed_text",
+      "text_sha256": "01cc9d60b5f9c6c1a43bc557af4bec1da2d1bcd4b3f1a899a9e85ff6a78ff803",
+      "published_at": null,
+      "published_at_raw": "Fri, 18 Sep 2026 19:15:00",
+      "fetched_at": "2026-09-19T13:52:13.297875+00:00"
+    },
+    "rbi_releases:4810244054b31331": {
+      "source_url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63627",
+      "title": "RBI to conduct Overnight Variable Rate Reverse Repo (VRRR) auction under LAF on September 21, 2026",
+      "publisher": "Reserve Bank of India",
+      "language": "en",
+      "source_type": "official_release_feed_text",
+      "text_sha256": "bd5aaa4bc22303075b0f16c215bb77f53722aecf0dbf0ae3fffb91504a815fe8",
+      "published_at": null,
+      "published_at_raw": "Fri, 18 Sep 2026 19:05:00",
+      "fetched_at": "2026-09-19T13:52:13.297875+00:00"
+    },
+    "rbi_releases:62691b68d36b22ed": {
+      "source_url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63626",
+      "title": "Auction of 91-Day, 182-Day and 364-Day Treasury Bills",
+      "publisher": "Reserve Bank of India",
+      "language": "en",
+      "source_type": "official_release_feed_text",
+      "text_sha256": "791b1018a083fbdb2423180f2ba833c84d94679e5d2a2ffeb5e99bd635d92486",
+      "published_at": null,
+      "published_at_raw": "Fri, 18 Sep 2026 17:35:00",
+      "fetched_at": "2026-09-19T13:52:13.297875+00:00"
+    },
+    "rbi_notifications:9ef67237fa932556": {
+      "source_url": "https://www.rbi.org.in/scripts/NotificationUser.aspx?Id=13704&Mode=0",
+      "title": "Reserve Bank of India (Rural Co-operative Banks – Know Your Customer) Amendment Directions, 2026",
+      "publisher": "Reserve Bank of India",
+      "language": "en",
+      "source_type": "official_notification_feed_text",
+      "text_sha256": "7556c54ffff73418ec35f18c060e635f841a70eb11923024443a7a5e9bec72d5",
+      "published_at": null,
+      "published_at_raw": "Fri, 18 Sep 2026 16:05:00",
+      "fetched_at": "2026-09-19T13:52:15.389462+00:00"
+    }
+  },
+  "cases": [
+    {
+      "id": "rbi_state_amount_en",
+      "language": "en",
+      "tags": [
+        "primary_document",
+        "paraphrase",
+        "supported"
+      ],
+      "text": "RBI’s announcement for the 22 September 2026 State Government Securities auction puts the aggregate face value on offer at ₹16,750 crore.",
+      "has_media": false,
+      "expected": {
+        "kind": "factual",
+        "claims": [
+          {
+            "description": "Aggregate announced face value is ₹16,750 crore.",
+            "verdict": "supported",
+            "evidence_ids": [
+              "rbi_releases:c45a73982905beb5"
+            ],
+            "reference_quotes": [
+              "The following State Governments have offered to sell stock by way of auction, for an aggregate amount of ₹16,750 Crore (Face Value)."
+            ]
+          }
+        ],
+        "extracted_claims_resolved": true,
+        "whole_post_validated": false
+      },
+      "note": null
+    },
+    {
+      "id": "rbi_state_wrong_amount_en",
+      "language": "en",
+      "tags": [
+        "primary_document",
+        "mutated_amount",
+        "contradicted"
+      ],
+      "text": "The aggregate face value announced by RBI for the 22 September 2026 State Government Securities auction is ₹61,750 crore.",
+      "has_media": false,
+      "expected": {
+        "kind": "factual",
+        "claims": [
+          {
+            "description": "The asserted ₹61,750 crore conflicts with the announced ₹16,750 crore.",
+            "verdict": "contradicted",
+            "evidence_ids": [
+              "rbi_releases:c45a73982905beb5"
+            ],
+            "reference_quotes": [
+              "The following State Governments have offered to sell stock by way of auction, for an aggregate amount of ₹16,750 Crore (Face Value)."
+            ]
+          }
+        ],
+        "extracted_claims_resolved": true,
+        "whole_post_validated": false
+      },
+      "note": null
+    },
+    {
+      "id": "rbi_vrrr_wrong_date_en",
+      "language": "en",
+      "tags": [
+        "primary_document",
+        "mutated_date",
+        "contradicted"
+      ],
+      "text": "RBI press release 2026-2027/1149 schedules its overnight Variable Rate Reverse Repo auction for 23 September 2026.",
+      "has_media": false,
+      "expected": {
+        "kind": "factual",
+        "claims": [
+          {
+            "description": "That specific press release schedules the auction for 21 September, not 23 September.",
+            "verdict": "contradicted",
+            "evidence_ids": [
+              "rbi_releases:4810244054b31331"
+            ],
+            "reference_quotes": [
+              "it has been decided to conduct a Variable Rate Reverse Repo (VRRR) auction on Monday, September 21, 2026"
+            ]
+          }
+        ],
+        "extracted_claims_resolved": true,
+        "whole_post_validated": false
+      },
+      "note": null
+    },
+    {
+      "id": "rbi_treasury_total_en",
+      "language": "en",
+      "tags": [
+        "primary_document",
+        "paraphrase",
+        "table",
+        "supported"
+      ],
+      "text": "The notified total for RBI’s Government of India Treasury Bill auction on 23 September 2026 is ₹24,000 crore.",
+      "has_media": false,
+      "expected": {
+        "kind": "factual",
+        "claims": [
+          {
+            "description": "The Treasury Bill notified total is ₹24,000 crore.",
+            "verdict": "supported",
+            "evidence_ids": [
+              "rbi_releases:62691b68d36b22ed"
+            ],
+            "reference_quotes": [
+              "| | Total | 24,000 | |"
+            ]
+          }
+        ],
+        "extracted_claims_resolved": true,
+        "whole_post_validated": false
+      },
+      "note": "The amount is in a table. Correctly finding the total is part of the test."
+    },
+    {
+      "id": "rbi_kyc_commencement_en",
+      "language": "en",
+      "tags": [
+        "primary_document",
+        "paraphrase",
+        "supported"
+      ],
+      "text": "RBI’s Rural Co-operative Banks Know Your Customer Amendment Directions dated 18 September 2026 say they take effect immediately.",
+      "has_media": false,
+      "expected": {
+        "kind": "factual",
+        "claims": [
+          {
+            "description": "The amendment says it comes into force with immediate effect.",
+            "verdict": "supported",
+            "evidence_ids": [
+              "rbi_notifications:9ef67237fa932556"
+            ],
+            "reference_quotes": [
+              "These Directions shall come into force with immediate effect."
+            ]
+          }
+        ],
+        "extracted_claims_resolved": true,
+        "whole_post_validated": false
+      },
+      "note": null
+    },
+    {
+      "id": "rbi_state_amount_hi",
+      "language": "hi",
+      "tags": [
+        "primary_document",
+        "cross_language_retrieval",
+        "paraphrase",
+        "supported"
+      ],
+      "text": "22 सितंबर 2026 की राज्य सरकारी प्रतिभूतियों की नीलामी के लिए RBI ने कुल अंकित मूल्य 16,750 करोड़ रुपये घोषित किया है।",
+      "has_media": false,
+      "expected": {
+        "kind": "factual",
+        "claims": [
+          {
+            "description": "The aggregate face value announced for that auction is ₹16,750 crore.",
+            "verdict": "supported",
+            "evidence_ids": [
+              "rbi_releases:c45a73982905beb5"
+            ],
+            "reference_quotes": [
+              "The following State Governments have offered to sell stock by way of auction, for an aggregate amount of ₹16,750 Crore (Face Value)."
+            ]
+          }
+        ],
+        "extracted_claims_resolved": true,
+        "whole_post_validated": false
+      },
+      "note": "The claim is Hindi but this corpus has the RBI evidence only in English; success depends on cross-language retrieval, not native Hindi primary-source coverage."
+    },
+    {
+      "id": "altnews_glacier_attribution_hi",
+      "language": "hi",
+      "tags": [
+        "publisher_article",
+        "native_hindi",
+        "attribution",
+        "supported"
+      ],
+      "text": "ऑल्ट न्यूज़ की नेपाल बाढ़ वाली रिपोर्ट के अनुसार वायरल ग्लेशियर वीडियो अलास्का के कोलंबिया ग्लेशियर का है।",
+      "has_media": false,
+      "expected": {
+        "kind": "factual",
+        "claims": [
+          {
+            "description": "The Hindi article identifies the glacier as Columbia Glacier in Alaska.",
+            "verdict": "supported",
+            "evidence_ids": [
+              "altnews_hi:690a1260804582a8"
+            ],
+            "reference_quotes": [
+              "कुल मिलाकर, नेपाल में अचानक आई बाढ़ के संदर्भ में हाल ही में वायरल हुआ वीडियो जिसमें ग्लेशियर फटने की घटना दिखाई गई है और जिसके बारे में कहा जा रहा है कि ये चीन का है — असल में अलास्का के कोलंबिया ग्लेशियर का है."
+            ]
+          }
+        ],
+        "extracted_claims_resolved": true,
+        "whole_post_validated": false
+      },
+      "note": "Tests what the article reports. No image or video is supplied or independently authenticated."
+    },
+    {
+      "id": "altnews_dance_wrong_date_hi",
+      "language": "hi",
+      "tags": [
+        "publisher_article",
+        "native_hindi",
+        "attribution",
+        "mutated_date",
+        "contradicted"
+      ],
+      "text": "ऑल्ट न्यूज़ की जितेंद्र मिश्रा और सिर पर ग्लास रखकर डांस करने वाले व्यक्ति की रिपोर्ट के मुताबिक विकास राणा के इंस्टाग्राम पर पूरा वीडियो 3 दिसंबर 2025 को पोस्ट हुआ था।",
+      "has_media": false,
+      "expected": {
+        "kind": "factual",
+        "claims": [
+          {
+            "description": "The article says the full video was posted on 3 November 2025, contradicting the asserted 3 December.",
+            "verdict": "contradicted",
+            "evidence_ids": [
+              "altnews_hi:4ed0d90afb17cca3"
+            ],
+            "reference_quotes": [
+              "हमें पूरा वीडियो 3 नवंबर 2025 को ‘विकास राणा‘ नामक इंस्टाग्राम अकाउंट पर पोस्ट किया हुआ मिला."
+            ]
+          }
+        ],
+        "extracted_claims_resolved": true,
+        "whole_post_validated": false
+      },
+      "note": "Tests an explicit date in a Hindi article; this is not video matching or an independent assessment of the pictured person."
+    },
+    {
+      "id": "no_evidence_metro_en",
+      "language": "en",
+      "tags": [
+        "evidence_gap",
+        "abstention"
+      ],
+      "text": "The Delhi Metro carried exactly 12,345,678 passengers on 18 September 2026.",
+      "has_media": false,
+      "expected": {
+        "kind": "factual",
+        "claims": [
+          {
+            "description": "The corpus does not establish this exact Delhi Metro daily ridership.",
+            "verdict": "insufficient_evidence",
+            "evidence_ids": [],
+            "reference_quotes": []
+          }
+        ],
+        "extracted_claims_resolved": false,
+        "whole_post_validated": false
+      },
+      "note": "Illustrative assertion deliberately outside this corpus; its real-world truth is not labeled."
+    },
+    {
+      "id": "no_evidence_metro_hi",
+      "language": "hi",
+      "tags": [
+        "evidence_gap",
+        "abstention",
+        "native_hindi"
+      ],
+      "text": "18 सितंबर 2026 को दिल्ली मेट्रो में ठीक 1,23,45,678 यात्रियों ने सफर किया था।",
+      "has_media": false,
+      "expected": {
+        "kind": "factual",
+        "claims": [
+          {
+            "description": "The corpus does not establish this exact Delhi Metro daily ridership.",
+            "verdict": "insufficient_evidence",
+            "evidence_ids": [],
+            "reference_quotes": []
+          }
+        ],
+        "extracted_claims_resolved": false,
+        "whole_post_validated": false
+      },
+      "note": "Hindi version of the evidence-gap control. Missing evidence must not become a false verdict."
+    },
+    {
+      "id": "personal_opinion_en",
+      "language": "en",
+      "tags": [
+        "opinion",
+        "no_factual_claim"
+      ],
+      "text": "I prefer quiet mornings, and I find crowded trains unpleasant.",
+      "has_media": false,
+      "expected": {
+        "kind": "no_factual_claim",
+        "claims": [],
+        "extracted_claims_resolved": false,
+        "whole_post_validated": false
+      },
+      "note": "Personal preferences alone should not receive a truth rating."
+    },
+    {
+      "id": "mixed_supported_and_unknown_en",
+      "language": "en",
+      "tags": [
+        "mixed_claims",
+        "supported",
+        "evidence_gap"
+      ],
+      "text": "RBI announced an aggregate face value of ₹16,750 crore for the State Government Securities auction on 22 September 2026. The Delhi Metro carried exactly 12,345,678 passengers on 18 September 2026.",
+      "has_media": false,
+      "expected": {
+        "kind": "factual",
+        "claims": [
+          {
+            "description": "The State Government Securities aggregate is ₹16,750 crore.",
+            "verdict": "supported",
+            "evidence_ids": [
+              "rbi_releases:c45a73982905beb5"
+            ],
+            "reference_quotes": [
+              "The following State Governments have offered to sell stock by way of auction, for an aggregate amount of ₹16,750 Crore (Face Value)."
+            ]
+          },
+          {
+            "description": "The exact Delhi Metro ridership is not established by the corpus.",
+            "verdict": "insufficient_evidence",
+            "evidence_ids": [],
+            "reference_quotes": []
+          }
+        ],
+        "extracted_claims_resolved": false,
+        "whole_post_validated": false
+      },
+      "note": "One resolved assertion must not hide the second assertion with no evidence."
+    },
+    {
+      "id": "mixed_supported_and_contradicted_en",
+      "language": "en",
+      "tags": [
+        "mixed_claims",
+        "primary_document",
+        "supported",
+        "contradicted"
+      ],
+      "text": "RBI’s State Government Securities auction on 22 September 2026 has an announced aggregate face value of ₹16,750 crore. RBI’s Treasury Bill auction on 23 September 2026 has a notified total of ₹34,000 crore.",
+      "has_media": false,
+      "expected": {
+        "kind": "factual",
+        "claims": [
+          {
+            "description": "The State Government Securities aggregate is ₹16,750 crore.",
+            "verdict": "supported",
+            "evidence_ids": [
+              "rbi_releases:c45a73982905beb5"
+            ],
+            "reference_quotes": [
+              "The following State Governments have offered to sell stock by way of auction, for an aggregate amount of ₹16,750 Crore (Face Value)."
+            ]
+          },
+          {
+            "description": "The Treasury Bill total is ₹24,000 crore, contradicting ₹34,000 crore.",
+            "verdict": "contradicted",
+            "evidence_ids": [
+              "rbi_releases:62691b68d36b22ed"
+            ],
+            "reference_quotes": [
+              "| | Total | 24,000 | |"
+            ]
+          }
+        ],
+        "extracted_claims_resolved": true,
+        "whole_post_validated": false
+      },
+      "note": null
+    },
+    {
+      "id": "attached_media_scope_en",
+      "language": "en",
+      "tags": [
+        "media_scope",
+        "primary_document",
+        "supported"
+      ],
+      "text": "For the Government of India Treasury Bills offered at RBI’s 23 September 2026 auction, the notified amount totals ₹24,000 crore.",
+      "has_media": true,
+      "expected": {
+        "kind": "factual",
+        "claims": [
+          {
+            "description": "The Treasury Bill notified total is ₹24,000 crore.",
+            "verdict": "supported",
+            "evidence_ids": [
+              "rbi_releases:62691b68d36b22ed"
+            ],
+            "reference_quotes": [
+              "| | Total | 24,000 | |"
+            ]
+          }
+        ],
+        "extracted_claims_resolved": true,
+        "whole_post_validated": false
+      },
+      "note": "Only the has_media flag is submitted. No media bytes are provided. Text resolution must leave media and whole-post validation false."
+    }
+  ]
+}

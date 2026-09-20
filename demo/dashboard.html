@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="local-pair-token" content="__LOCAL_PAIR_TOKEN__">
+  <title>Signal Desk · local fact-checking demo</title>
+  <link rel="stylesheet" href="/assets/dashboard.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#overview" aria-label="Signal Desk overview">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>Signal Desk</span>
+      </a>
+      <nav class="tabs" aria-label="Dashboard sections">
+        <button class="tab active" data-tab="overview" type="button">Overview</button>
+        <button class="tab" data-tab="hierarchy" type="button">Claim map</button>
+        <button class="tab" data-tab="activity" type="button">Evidence</button>
+        <button class="tab" data-tab="costs" type="button">Costs</button>
+      </nav>
+      <div class="system-state"><span id="system-dot" class="state-dot"></span><span id="system-label">Connecting</span></div>
+    </header>
+
+    <main>
+      <section id="overview" class="view active" aria-labelledby="overview-title">
+        <div class="hero">
+          <div>
+            <p class="kicker">Evidence infrastructure · local demo</p>
+            <h1 id="overview-title">Research once.<br><em>Check every version.</em></h1>
+            <p class="hero-copy">Map posts to precise claims, reuse source passages safely, and keep uncertainty visible. This dashboard shows the mechanism—not a live news feed or a measured accuracy claim.</p>
+          </div>
+          <div class="hero-aside" aria-label="System summary">
+            <div><span>Evidence index</span><strong id="index-count">—</strong></div>
+            <div><span>Investigations</span><strong id="investigation-count">—</strong></div>
+            <div><span>Paid API spend</span><strong id="spend-count">—</strong></div>
+          </div>
+        </div>
+
+        <div id="warnings" class="warnings" hidden></div>
+
+        <div class="metrics-heading">
+          <div><p class="kicker">Exposure coverage</p><h2>What has actually been measured</h2></div>
+          <div class="scope-switch" role="group" aria-label="Metric scope">
+            <button type="button" class="active" data-scope="live_feed">Live feed</button>
+            <button type="button" data-scope="development">Development / replay</button>
+          </div>
+        </div>
+        <div id="scope-note" class="scope-note"></div>
+        <div class="metrics-grid">
+          <article class="metric metric-primary"><span>Decisive coverage</span><strong id="m-coverage">—</strong><small id="m-coverage-detail">—</small></article>
+          <article class="metric"><span>Observed posts</span><strong id="m-observed">—</strong><small>Distinct observed post versions</small></article>
+          <article class="metric"><span>Already cached</span><strong id="m-prelabelled">—</strong><small id="m-prelabelled-detail">—</small></article>
+          <article class="metric"><span>Assessed after view</span><strong id="m-new">—</strong><small>New checks completed</small></article>
+          <article class="metric"><span>Unsure / unresolved</span><strong id="m-unsure">—</strong><small>Excluded from decisive coverage</small></article>
+        </div>
+
+        <div class="workspace">
+          <section class="check-card card">
+            <div class="card-heading"><div><p class="kicker">Try the pipeline</p><h2>Check a post</h2></div><span class="dev-badge">Development action</span></div>
+            <label for="post-text">Post text</label>
+            <textarea id="post-text" maxlength="5000" placeholder="Paste a factual post, or choose a replay example below…"></textarea>
+            <div class="example-row" id="examples" aria-label="Recorded demo examples"></div>
+            <details class="context-panel">
+              <summary>Post provenance <span>optional · improves safe reuse</span></summary>
+              <div class="context-grid">
+                <label>Relationship<select id="relation"><option value="original">Original post</option><option value="repost">Native repost</option><option value="quote">Quote post</option><option value="copy">Copied text</option></select></label>
+                <label>Original post ID<input id="original-id" type="text" autocomplete="off" placeholder="If known"></label>
+                <label>Post ID<input id="post-id" type="text" autocomplete="off" placeholder="Optional"></label>
+                <label>Published at<input id="published-at" type="datetime-local"></label>
+              </div>
+              <label class="quote-field">Quoted text<textarea id="quoted-text" maxlength="3000" placeholder="For a quote post, include the quoted original"></textarea></label>
+              <label class="media-check"><input id="has-media" type="checkbox"> The post includes media that may affect its meaning</label>
+            </details>
+            <div class="check-actions"><p>Examples and manual checks are logged only in the <strong>development</strong> scope.</p><button id="check-button" class="primary" type="button">Check against evidence <span>→</span></button></div>
+          </section>
+
+          <section id="result-card" class="result-card card" aria-live="polite" aria-busy="false">
+            <div class="empty-result"><div class="orbit" aria-hidden="true"><i></i><i></i><i></i></div><p class="kicker">Result</p><h2>Evidence before verdict.</h2><p>A result appears here with its reuse route and cited source passages. Missing evidence stays unresolved.</p></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="hierarchy" class="view" aria-labelledby="hierarchy-title">
+        <div class="section-intro"><div><p class="kicker">Inspect the structure</p><h1 id="hierarchy-title">From topic to each post version.</h1><p>Shared context narrows the search. Verdicts attach to precise claims and checked post versions.</p></div><div class="legend"><span><i class="topic"></i> Topic</span><span><i class="event"></i> Event</span><span><i class="claim"></i> Claim</span><span><i class="post"></i> Post version</span></div></div>
+        <div class="hierarchy-layout">
+          <div id="hierarchy-list" class="tree card" aria-label="Claim hierarchy"></div>
+          <aside id="hierarchy-detail" class="detail card"><p class="kicker">Selection</p><h2>Choose an event or claim</h2><p class="subtle">Inspect its canonical wording, status, source count, and reuse across post versions.</p></aside>
+        </div>
+      </section>
+
+      <section id="activity" class="view" aria-labelledby="activity-title">
+        <div class="section-intro"><div><p class="kicker">Research ledger</p><h1 id="activity-title">Every result has a route.</h1><p>Reuse saves investigation work only when identity and context checks pass.</p></div></div>
+        <div id="route-grid" class="route-grid"></div>
+        <div class="activity-layout">
+          <section class="card"><div class="card-heading"><div><p class="kicker">Recent assessments</p><h2>Development activity</h2></div></div><div id="recent-list" class="recent-list"></div></section>
+          <aside class="card method-note"><p class="kicker">Reuse policy</p><h2>Similarity is a lead, not a verdict.</h2><ol><li>Match the original post version or exact repost context.</li><li>Resolve event, entities, dates, numbers, units, polarity, and attribution.</li><li>Recheck the precise assertion against immutable source passages.</li><li>Abstain when context or equivalence remains ambiguous.</li></ol><p>Quote-post commentary gets its own claim detection. Same-event claims may reuse evidence, never a verdict automatically.</p></aside>
+        </div>
+      </section>
+
+      <section id="costs" class="view" aria-labelledby="costs-title">
+        <div class="section-intro"><div><p class="kicker">Editable scenario</p><h1 id="costs-title">Price a bounded workload.</h1><p>This calculator estimates paid research allowances. It does not estimate “all facts,” coverage, or the full operating cost of a service.</p></div></div>
+        <div class="cost-layout">
+          <section class="card assumptions"><p class="kicker">Workload</p><h2>Assumptions</h2>
+            <div class="input-grid">
+              <label>Initial investigations<input id="cost-initial" type="number" min="0" step="1000" value="100000"></label>
+              <label>Daily investigations<input id="cost-daily" type="number" min="0" step="100" value="10000"></label>
+              <label>Paid search share<input id="cost-search-share" type="number" min="0" max="100" step="1" value="20"><span>%</span></label>
+              <label>Paid Sonnet review share<input id="cost-model-share" type="number" min="0" max="100" step="1" value="5"><span>%</span></label>
+              <label>Initial X post reads<input id="cost-x-initial" type="number" min="0" step="1000" value="0"></label>
+              <label>Daily X post reads<input id="cost-x-daily" type="number" min="0" step="1000" value="0"></label>
+            </div>
+            <details><summary>Unit-rate assumptions</summary><div class="rate-list"><span>6 searches per search-routed attempt</span><strong>$0.005 / search</strong><span>20k input tokens</span><strong>$3 / million</strong><span>3k output tokens</span><strong>$15 / million</strong><span>Planning reserve</span><strong>25%</strong><span>X reads</span><strong>$0.005 / returned post</strong></div></details>
+          </section>
+          <section class="card cost-output"><p class="kicker">Paid subtotals</p><h2>Illustrative budget</h2><div class="cost-pair"><div><span>Startup research</span><strong id="startup-research">$—</strong></div><div><span>Daily research</span><strong id="daily-research">$—</strong></div></div><div class="cost-pair secondary"><div><span>Initial X reads</span><strong id="startup-x">$—</strong></div><div><span>Daily X reads</span><strong id="daily-x">$—</strong></div></div><div class="cost-total"><span>Research + X</span><strong><span id="startup-total">$—</span> startup</strong><strong><span id="daily-total">$—</span> / day</strong></div><p id="x-limit-note" class="limit-note" hidden></p></section>
+        </div>
+        <div class="exclusions"><strong>Excluded from these subtotals</strong><span>Local GPU energy and hardware</span><span>Hosting, storage, and delivery</span><span>Licensing and media verification</span><span>Human audits and operations</span></div>
+        <p class="cost-footnote">The calculator uses a local-heavy hypothesis: paid search and paid review apply only to the editable shares above. Attempts may still be unresolved. Provider rates are scenario inputs checked 19 Sep 2026, not quotes or promises of equivalent review quality.</p>
+      </section>
+    </main>
+    <footer><span>Local evidence demo</span><span>Recorded examples are source-derived development cases, not a live feed or hardcoded truth.</span></footer>
+  </div>
+  <script src="/assets/dashboard.js" defer></script>
+</body>
+</html>

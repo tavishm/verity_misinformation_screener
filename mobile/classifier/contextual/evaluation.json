@@ -1,0 +1,336 @@
+{
+  "model": "sentence-transformers/distiluse-base-multilingual-cased-v2",
+  "revision": "bfe45d0732ca50787611c0fe107ba278c7f3f889",
+  "seed": 20260920,
+  "train_rows": 10819,
+  "validation_rows": 2499,
+  "test_rows": 1578,
+  "personal_threshold": 0.7600000000000002,
+  "spam_threshold": 0.9000000000000002,
+  "validation": {
+    "rows": 2499,
+    "confusion_matrix": [
+      [
+        1232,
+        686,
+        1
+      ],
+      [
+        13,
+        429,
+        0
+      ],
+      [
+        0,
+        52,
+        86
+      ]
+    ],
+    "report": {
+      "personal": {
+        "precision": 0.989558232931727,
+        "recall": 0.6420010422094841,
+        "f1-score": 0.7787610619469026,
+        "support": 1919.0
+      },
+      "claim": {
+        "precision": 0.3676092544987147,
+        "recall": 0.9705882352941176,
+        "f1-score": 0.5332504661280298,
+        "support": 442.0
+      },
+      "scam": {
+        "precision": 0.9885057471264368,
+        "recall": 0.6231884057971014,
+        "f1-score": 0.7644444444444445,
+        "support": 138.0
+      },
+      "accuracy": 0.6990796318527411,
+      "macro avg": {
+        "precision": 0.7818910781856262,
+        "recall": 0.7452592277669011,
+        "f1-score": 0.6921519908397924,
+        "support": 2499.0
+      },
+      "weighted avg": {
+        "precision": 0.8794955312476447,
+        "recall": 0.6990796318527411,
+        "f1-score": 0.7345468256254616,
+        "support": 2499.0
+      }
+    }
+  },
+  "test_groups": {
+    "claimbuster:en": {
+      "rows": 702,
+      "confusion_matrix": [
+        [
+          208,
+          143,
+          0
+        ],
+        [
+          13,
+          338,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "report": {
+        "personal": {
+          "precision": 0.9411764705882353,
+          "recall": 0.5925925925925926,
+          "f1-score": 0.7272727272727273,
+          "support": 351.0
+        },
+        "claim": {
+          "precision": 0.7027027027027027,
+          "recall": 0.9629629629629629,
+          "f1-score": 0.8125,
+          "support": 351.0
+        },
+        "scam": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "accuracy": 0.7777777777777778,
+        "macro avg": {
+          "precision": 0.5479597244303127,
+          "recall": 0.5185185185185185,
+          "f1-score": 0.5132575757575758,
+          "support": 702.0
+        },
+        "weighted avg": {
+          "precision": 0.8219395866454691,
+          "recall": 0.7777777777777778,
+          "f1-score": 0.7698863636363636,
+          "support": 702.0
+        }
+      }
+    },
+    "synthetic_local_teacher:en": {
+      "rows": 37,
+      "confusion_matrix": [
+        [
+          5,
+          4,
+          0
+        ],
+        [
+          0,
+          14,
+          0
+        ],
+        [
+          0,
+          7,
+          7
+        ]
+      ],
+      "report": {
+        "personal": {
+          "precision": 1.0,
+          "recall": 0.5555555555555556,
+          "f1-score": 0.7142857142857143,
+          "support": 9.0
+        },
+        "claim": {
+          "precision": 0.56,
+          "recall": 1.0,
+          "f1-score": 0.717948717948718,
+          "support": 14.0
+        },
+        "scam": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1-score": 0.6666666666666666,
+          "support": 14.0
+        },
+        "accuracy": 0.7027027027027027,
+        "macro avg": {
+          "precision": 0.8533333333333334,
+          "recall": 0.6851851851851851,
+          "f1-score": 0.6996336996336997,
+          "support": 37.0
+        },
+        "weighted avg": {
+          "precision": 0.8335135135135135,
+          "recall": 0.7027027027027027,
+          "f1-score": 0.6976536976536977,
+          "support": 37.0
+        }
+      }
+    },
+    "synthetic_local_teacher:hi": {
+      "rows": 37,
+      "confusion_matrix": [
+        [
+          1,
+          8,
+          0
+        ],
+        [
+          0,
+          14,
+          0
+        ],
+        [
+          0,
+          10,
+          4
+        ]
+      ],
+      "report": {
+        "personal": {
+          "precision": 1.0,
+          "recall": 0.1111111111111111,
+          "f1-score": 0.2,
+          "support": 9.0
+        },
+        "claim": {
+          "precision": 0.4375,
+          "recall": 1.0,
+          "f1-score": 0.6086956521739131,
+          "support": 14.0
+        },
+        "scam": {
+          "precision": 1.0,
+          "recall": 0.2857142857142857,
+          "f1-score": 0.4444444444444444,
+          "support": 14.0
+        },
+        "accuracy": 0.5135135135135135,
+        "macro avg": {
+          "precision": 0.8125,
+          "recall": 0.4656084656084656,
+          "f1-score": 0.4177133655394525,
+          "support": 37.0
+        },
+        "weighted avg": {
+          "precision": 0.7871621621621622,
+          "recall": 0.5135135135135135,
+          "f1-score": 0.44713409061235154,
+          "support": 37.0
+        }
+      }
+    },
+    "synthetic_local_teacher:hinglish": {
+      "rows": 28,
+      "confusion_matrix": [
+        [
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          12,
+          2
+        ]
+      ],
+      "report": {
+        "personal": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 4.0
+        },
+        "claim": {
+          "precision": 0.38461538461538464,
+          "recall": 1.0,
+          "f1-score": 0.5555555555555556,
+          "support": 10.0
+        },
+        "scam": {
+          "precision": 1.0,
+          "recall": 0.14285714285714285,
+          "f1-score": 0.25,
+          "support": 14.0
+        },
+        "accuracy": 0.42857142857142855,
+        "macro avg": {
+          "precision": 0.4615384615384615,
+          "recall": 0.38095238095238093,
+          "f1-score": 0.26851851851851855,
+          "support": 28.0
+        },
+        "weighted avg": {
+          "precision": 0.6373626373626374,
+          "recall": 0.42857142857142855,
+          "f1-score": 0.32341269841269843,
+          "support": 28.0
+        }
+      }
+    },
+    "uci_sms:en": {
+      "rows": 774,
+      "confusion_matrix": [
+        [
+          508,
+          162,
+          7
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          9,
+          87
+        ]
+      ],
+      "report": {
+        "personal": {
+          "precision": 0.9980353634577603,
+          "recall": 0.7503692762186115,
+          "f1-score": 0.8566610455311973,
+          "support": 677.0
+        },
+        "claim": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "scam": {
+          "precision": 0.925531914893617,
+          "recall": 0.8969072164948454,
+          "f1-score": 0.9109947643979057,
+          "support": 97.0
+        },
+        "accuracy": 0.7687338501291989,
+        "macro avg": {
+          "precision": 0.6411890927837924,
+          "recall": 0.5490921642378189,
+          "f1-score": 0.589218603309701,
+          "support": 774.0
+        },
+        "weighted avg": {
+          "precision": 0.9889490139607037,
+          "recall": 0.7687338501291989,
+          "f1-score": 0.8634703100403326,
+          "support": 774.0
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Synthetic Hindi and Romanized Hindi data is NOT a real WhatsApp benchmark.",
+    "Task labels from English debate and old SMS data do not establish senior-user deployment accuracy.",
+    "Personal messages may contain private facts that are not public fact-check targets.",
+    "Model probability is a routing score, never truth or scam certainty."
+  ]
+}
