@@ -56,4 +56,11 @@ public class MessageTrackerTest {
         List<MessageTracker.Entry> entries=t.reconcile("a",Arrays.asList(items("anchor").get(0),photo("row:42"),photo("row:43")));
         t.settle(entries.get(2).id);assertFalse(entries.get(1).settled);assertTrue(entries.get(2).settled);
     }
+    @Test public void separatePictureViewportsCanLaterOverlapWithoutRevivingChoices(){
+        MessageTracker t=new MessageTracker();List<MessageTracker.Entry> first=t.reconcile("a",Collections.singletonList(photo("row:41")));t.settle(first);
+        List<MessageTracker.Entry> second=t.reconcile("a",Collections.singletonList(photo("row:42")));t.settle(second);
+        List<MessageTracker.Entry> both=t.reconcile("a",Arrays.asList(photo("row:41"),photo("row:42")));
+        assertEquals(first.get(0).id,both.get(0).id);assertEquals(second.get(0).id,both.get(1).id);
+        assertTrue(both.get(0).settled);assertTrue(both.get(1).settled);
+    }
 }

@@ -36,6 +36,13 @@ final class MessageTracker {
             if(match==score[i][j]) { matches.put(j,i); i++;j++; }
             else if(score[i+1][j]>=score[i][j+1]) i++; else j++;
         }
+        // Partial viewports can be seen in a different order from the underlying
+        // conversation. Reuse an explicit message identity even when it is not
+        // part of the best sequence alignment; otherwise scrolling back to two
+        // pictures previously seen separately creates a fresh, noisy copy.
+        Map<String,Entry> identities=new HashMap<>();
+        for(Entry entry:history)if(!entry.instance.isEmpty())identities.putIfAbsent(identity(entry.signature,entry.instance),entry);
+        Set<String> used=new HashSet<>();
         List<Entry> out=new ArrayList<>(), merged=new ArrayList<>(); int consumed=0;
         int lastMatch=-1;for(Integer at:matches.keySet())lastMatch=Math.max(lastMatch,at);
         // Readable UI windows are not a chronological database. A large picture
@@ -52,6 +59,10 @@ final class MessageTracker {
                 entry=history.get(old); consumed=old+1; entry.hint=item.hint;
                 if(!item.instance.isEmpty())entry.instance=item.instance;
             } else {
+                entry=item.instance.isEmpty()?null:identities.get(identity(item.signature,item.instance));
+                if(entry!=null && used.contains(entry.id))entry=null;
+                if(entry!=null)entry.hint=item.hint;
+                else {
                 entry=new Entry(Long.toString(++serial),item);
                 // Eligibility can arrive after the image/text (for example a
                 // forwarded label or unknown-sender header loading later).
@@ -60,14 +71,17 @@ final class MessageTracker {
                 // even if a greeting or another picture arrives immediately after.
                 boolean appended=!first && lastMatch>=0 && j>lastMatch;
                 entry.settled=!screenEveryUnseen && !appended && j<n-1;
+                }
             }
-            merged.add(entry); out.add(entry);
+            used.add(entry.id);merged.add(entry); out.add(entry);
         }
         while(consumed<m) merged.add(history.get(consumed++));
+        Set<String> stored=new HashSet<>();merged.removeIf(entry->!stored.add(entry.id));
         if(merged.size()>MAX_MESSAGES) merged=new ArrayList<>(merged.subList(merged.size()-MAX_MESSAGES,merged.size()));
         chats.put(chat,merged); while(chats.size()>MAX_CHATS) chats.remove(chats.keySet().iterator().next());
         return out;
     }
+    private static String identity(String signature,String instance){return signature+"|"+instance;}
     private static boolean matches(Entry entry,Item item) {
         return entry.signature.equals(item.signature) && (entry.instance.isEmpty() || item.instance.isEmpty() || entry.instance.equals(item.instance));
     }

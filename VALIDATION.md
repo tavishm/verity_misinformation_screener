@@ -2,8 +2,8 @@
 
 ## Android update — 20 September 2026
 
-The combined Android source passed **208 host tests**, including 23 message
-tracker tests and six new regressions for repeated pictures, retained choices,
+The combined Android source passed **209 host tests**, including 24 message
+tracker tests and seven new regressions for repeated pictures, retained choices,
 old-state migration and messages arriving beside a greeting. The APK builds,
 signature verification passes, and native libraries pass 16 KiB alignment.
 
