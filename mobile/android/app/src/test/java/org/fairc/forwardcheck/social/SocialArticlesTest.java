@@ -7,6 +7,16 @@ import java.util.concurrent.atomic.AtomicInteger;
 import static org.junit.Assert.*;
 
 public class SocialArticlesTest {
+    @Test public void articleBeforeLongAdvertisingTailIsNotDiscarded()throws Exception{
+        String html="<article>"+words(10)+"</article>";okio.Buffer body=new okio.Buffer().writeUtf8(html);body.write(new byte[SocialArticles.MAX_BYTES]);
+        byte[] read=SocialArticles.readBounded(body);assertEquals(SocialArticles.MAX_BYTES,read.length);assertTrue(body.size()>0);
+        assertNotNull(SocialArticles.parse(hit("https://news.example/story"),new String(read,java.nio.charset.StandardCharsets.UTF_8),"https://news.example/story"));
+    }
+    @Test public void completedArticleSurvivesTimeoutInPageTail()throws Exception{
+        String html="<article>"+words(10)+"</article>";okio.Buffer source=new okio.Buffer().writeUtf8(html);
+        okio.BufferedSource body=okio.Okio.buffer(new okio.ForwardingSource(source){@Override public long read(okio.Buffer sink,long count)throws java.io.IOException{if(source.size()==0)throw new java.net.SocketTimeoutException("ad tail");return super.read(sink,count);}});
+        assertEquals(html,new String(SocialArticles.readBounded(body),java.nio.charset.StandardCharsets.UTF_8));
+    }
     private static SocialVerdict.Source hit(String url){return new SocialVerdict.Source("Search title",url,"Short search excerpt","2026-09-20T01:00:00Z");}
     private static String words(int count){StringBuilder s=new StringBuilder();for(int i=0;i<count;i++)s.append("documented article sentence number ").append(i).append(" contains useful reporting. ");return s.toString();}
 

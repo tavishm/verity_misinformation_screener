@@ -28,6 +28,10 @@ public final class SocialPolicy {
     // still reach the combined factual screen.
     public static boolean clearPersonal(String text){return text.trim().matches("(?iu)(?:happy (?:diwali|birthday|new year|holi)|i (?:love|hate|like|dislike) (?:this|that|it)|this is (?:funny|hilarious|beautiful|boring)|good (?:morning|night|evening))[.! ]*");}
     public static boolean localOpinionGate(SocialPost post){return !SocialExtractor.NEWS.equals(post.app);}
+    /** X hides long posts even when a whole independent sentence is visible.
+     * Such checks are explicitly labelled as visible text, never the full post. */
+    public static boolean visibleTextScope(SocialPost post){return SocialExtractor.X.equals(post.app)&&!post.completeVisibleText&&post.text.matches("(?is).*\\b(?:Show more|Read more)$")&&java.util.regex.Pattern.compile("[.!?।](?:\\s|$)").matcher(post.text).find();}
+    public static boolean visualClaim(String text){return Pattern.compile("(?iu)\\b(?:this|these|the attached|the above|the below)\\s+(?:(?:viral|old|new|real|fake)\\s+)?(?:photo(?:graph)?s?|pictures?|images?|videos?|footage|clip)\\b|\\b(?:photo|picture|image|video|footage|clip)\\s+(?:shows?|is from|was (?:taken|filmed|recorded)|is (?:real|fake|edited|AI.generated))\\b|यह\\s+(?:तस्वीर|फोटो|वीडियो)").matcher(text).find();}
     public static boolean decisiveQuick(String verdict,double confidence,boolean current,SocialPost post){
         return quickEligible(post)&&!current&&confidence>=.95&&confidence<=1&&(verdict.equals("true")||verdict.equals("false"));
     }

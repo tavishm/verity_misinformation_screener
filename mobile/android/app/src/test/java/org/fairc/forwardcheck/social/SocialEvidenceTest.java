@@ -4,6 +4,13 @@ import static org.junit.Assert.*;
 import org.json.*;
 
 public class SocialEvidenceTest {
+    @Test public void deepExpansionPrioritizesRealCitationsAndKeepsAllEightResults()throws Exception{
+        JSONArray retrieved=new JSONArray();for(int i=0;i<8;i++)retrieved.put(new JSONObject().put("type","url_citation").put("url_citation",new JSONObject().put("url","https://example.org/"+i).put("content","A sufficiently long actual provider passage "+i)));
+        JSONObject answer=new JSONObject().put("_retrieved",retrieved).put("citations",new JSONArray().put("https://invented.example/article").put("https://example.org/7"));
+        java.util.List<SocialVerdict.Source> ordered=SocialEvidence.researchHits(answer);
+        assertEquals(8,ordered.size());assertEquals("https://example.org/7",ordered.get(0).url);
+        for(SocialVerdict.Source s:ordered)assertFalse(s.url.contains("invented"));
+    }
     @Test public void combinedSearchCannotPublishWrongEventOrInventedSource()throws Exception{java.util.List<SocialVerdict.Source> hits=java.util.Collections.singletonList(new SocialVerdict.Source("A report","https://publisher.example/story","The court explicitly upheld the consumer refund order.",""));JSONObject answer=new JSONObject().put("v","true").put("relation","same_event").put("url",hits.get(0).url);assertEquals(0,SocialEvidence.selectedSearch(answer,hits));assertEquals(-1,SocialEvidence.selectedSearch(new JSONObject(answer.toString()).put("url","https://invented.example/story"),hits));assertEquals(-1,SocialEvidence.selectedSearch(new JSONObject(answer.toString()).put("v","false").put("relation","different_event"),hits));assertEquals(-1,SocialEvidence.selectedSearch(new JSONObject().put("v","false").put("relation","different_event").put("url",""),hits));assertEquals(-1,SocialEvidence.selectedSearch(new JSONObject(answer.toString()).put("v","research"),hits));}
     String quote="Earth has one natural moon, and Mars has its two small moons.";
     JSONObject citation()throws Exception{return new JSONObject().put("url","https://www.nasa.gov/moons.pdf").put("quote",quote);}

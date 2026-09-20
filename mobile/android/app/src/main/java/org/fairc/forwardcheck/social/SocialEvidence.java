@@ -13,7 +13,7 @@ final class SocialEvidence {
         return new JSONObject().put("claim",claim).put("checked_at_utc",java.time.Instant.now().toString()).put("sources",evidence).toString();
     }
     static String screeningInput(SocialPost post,java.util.List<SocialVerdict.Source> sources)throws JSONException{
-        return new JSONObject(screeningInput(post.text,sources)).put("visual_context_unchecked",post.media).toString();
+        return new JSONObject(screeningInput(post.text,sources)).put("visual_context_unchecked",post.media).put("visible_text_only",SocialPolicy.visibleTextScope(post)).toString();
     }
     /** Reject invented quotes, invalid indices and stale sources before a green/red result. */
     static SocialVerdict.Source selected(JSONObject answer,java.util.List<SocialVerdict.Source> sources,boolean current,long now){
@@ -56,6 +56,17 @@ final class SocialEvidence {
         String url=answer.optString("url");int found=-1;
         for(int i=0;i<sources.size();i++)if(sameSource(url,sources.get(i).url)){if(found>=0)return -1;found=i;}
         return found;
+    }
+    /** Expand cited real provider results first; invented citation URLs add nothing. */
+    static java.util.List<SocialVerdict.Source> researchHits(JSONObject answer){
+        java.util.List<SocialVerdict.Source> all=searchHits(answer.optJSONArray("_retrieved"),8),ordered=new java.util.ArrayList<>();
+        JSONArray citations=answer.optJSONArray("citations");
+        for(int i=0;citations!=null&&i<Math.min(3,citations.length());i++)try{
+            JSONObject citation=citation(citations.opt(i));if(citation==null)continue;
+            for(SocialVerdict.Source source:all)if(sameSource(citation.optString("url"),source.url)&&!ordered.contains(source))ordered.add(source);
+        }catch(JSONException invalid){}
+        for(SocialVerdict.Source source:all)if(!ordered.contains(source))ordered.add(source);
+        return ordered;
     }
     static JSONObject answer(JSONObject completion)throws Exception {
         JSONObject choice=completion.getJSONArray("choices").getJSONObject(0);

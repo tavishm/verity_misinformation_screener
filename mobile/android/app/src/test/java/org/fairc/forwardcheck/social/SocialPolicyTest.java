@@ -3,6 +3,12 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class SocialPolicyTest {
+    @Test public void independentEventAndSpecificPhotoClaimsAreDifferentScopes(){assertTrue(SocialPolicy.visualClaim("This photo shows the bridge collapsing today."));assertTrue(SocialPolicy.visualClaim("The video is from Mumbai."));assertFalse(SocialPolicy.visualClaim("A bridge collapsed in Mumbai. Tragic news."));assertFalse(SocialPolicy.visualClaim("The government announced a new policy for video games."));}
+    @Test public void collapsedXCanCheckOnlyCompleteVisibleSentences(){
+        assertTrue(SocialPolicy.visibleTextScope(new SocialPost(SocialExtractor.X,"The spacecraft launched on Tuesday. #Space Show more",0,0,100,100,true,false,-1,-1,java.util.Collections.emptyList())));
+        assertFalse(SocialPolicy.visibleTextScope(new SocialPost(SocialExtractor.X,"The spacecraft launched with Show more",0,0,100,100,true,false,-1,-1,java.util.Collections.emptyList())));
+        assertFalse(SocialPolicy.visibleTextScope(new SocialPost(SocialExtractor.REDDIT,"The spacecraft launched on Tuesday. Show more",0,0,100,100,true,false,-1,-1,java.util.Collections.emptyList())));
+    }
     @org.junit.Test public void headlineFragmentsCannotBeSilencedByTheMessageModel(){String t="IIT Bombay faculty member booked for caste abuse, suicide abetment";org.junit.Assert.assertFalse(SocialPolicy.localOpinionGate(new SocialPost(SocialExtractor.NEWS,t,0,0,500,200,false)));org.junit.Assert.assertTrue(SocialPolicy.localOpinionGate(new SocialPost(SocialExtractor.REDDIT,"Happy Diwali!",0,0,500,200,false)));}
     @Test public void localOpinionVetoCannotHideMixedFacts(){assertTrue(SocialPolicy.clearPersonal("Happy Diwali!"));assertTrue(SocialPolicy.clearPersonal("I hate this."));assertFalse(SocialPolicy.clearPersonal("I hate this because 10 people died."));assertFalse(SocialPolicy.clearPersonal("IIT Bombay faculty member booked for caste abuse"));}
     private SocialPost p(String text){return new SocialPost(SocialExtractor.X,text,0,100,300,400,false);}

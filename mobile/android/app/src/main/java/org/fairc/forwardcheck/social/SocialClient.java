@@ -67,6 +67,7 @@ public final class SocialClient {
                     try{active.timings.put("mode",detailed?"detail":"screen").put("complete_text",textComplete(post)).put("has_media",post.media);if(detailed)active.timings.put("image_attached",researchInput.hasImage()).put("link_count",researchInput.links.size());}catch(JSONException ignored){}
                     SocialVerdict result;
                     try{result=review(post,detailed,revision,active,researchInput);}catch(SocialCosts.Limit e){result=detailed||active.factual?SocialVerdict.unclear("Monthly checking limit reached."):quiet("screening_limit");}catch(Exception e){try{active.timings.put("error_type",e.getClass().getSimpleName());}catch(JSONException ignored){}result=SocialVerdict.unclear("Could not check. Try Research deeper.");}
+                    if(result.decisive()&&!textComplete(post))result=new SocialVerdict(result.kind,"visible_text","Only the visible text was checked. "+result.note,result.sources);
                     synchronized(SocialClient.this){running.remove(workKey);if(valid(post,revision)){Cached old=cache.get(cacheKey);boolean richer=old!=null&&old.expires>SystemClock.elapsedRealtime()&&"sources".equals(old.verdict.basis)&&!"sources".equals(result.basis);if(!richer){long ttl=result.decisive()?SocialPolicy.ttl(post):"nonfactual".equals(result.basis)?SocialPolicy.STABLE_TTL_MS:15_000;cache.put(cacheKey,new Cached(result,SystemClock.elapsedRealtime()+ttl));}while(cache.size()>128)cache.remove(cache.keySet().iterator().next());}}
                     active.mark("total_ms",started);recordTiming(post,active,result);active.result.complete(result);
                 });
@@ -105,7 +106,7 @@ public final class SocialClient {
             // News cache is an acceleration, never the only source of evidence.
             // The semantic gate also rescues factual fragments misclassified by
             // the forwarded-message model, while keeping pure opinions quiet.
-            if(!evidence.isEmpty()||localPersonal||!textComplete(post)){
+            if(!evidence.isEmpty()||localPersonal||!checkableText(post)){
                 try{
                 long screenStarted=SystemClock.elapsedRealtime();
                 JSONObject answer=call(post,"screen",asset("social_grounded_prompt.txt"),false,revision,SocialEvidence.screeningInput(post,evidence));
@@ -115,20 +116,21 @@ public final class SocialClient {
                 active.factual=true;
                 SocialVerdict.Source source=SocialEvidence.selectedGrounded(answer,evidence,post.text,true,System.currentTimeMillis());
                 active.timings.put("screen_source_accepted",source!=null);
-                if(textComplete(post)&&source!=null&&confirmContradiction(post,answer,evidence,revision,active))return new SocialVerdict(answer.optString("v"),"news_excerpt",quickReason(answer.optString("v")),Collections.singletonList(source));
+                if(checkableText(post)&&!SocialPolicy.visualClaim(post.text)&&source!=null&&confirmContradiction(post,answer,evidence,revision,active))return new SocialVerdict(answer.optString("v"),"news_excerpt",quickReason(answer.optString("v")),Collections.singletonList(source));
                 }catch(SocialCosts.Limit limit){throw limit;}catch(Exception cacheScreenUnavailable){active.timings.put("cache_screen_error",cacheScreenUnavailable.getClass().getSimpleName());}
             }
             // This adapter cannot certify omitted text or uncertain OCR. A
             // short opinion gate is enough here; do not buy search/page work
             // that the completeness guard would inevitably discard afterwards.
-            if(!textComplete(post))return SocialVerdict.unclear("The full post needs a closer check. Tap Research deeper.");
+            if(!checkableText(post))return SocialVerdict.unclear("The full post needs a closer check. Tap Research deeper.");
+            if(SocialPolicy.visualClaim(post.text))return SocialVerdict.unclear("This picture or video needs a closer check. Tap Research deeper.");
             // Every remaining factual candidate receives a real search. Search
             // annotations supply URLs; model-invented URLs cannot enter context.
             long searchStarted=SystemClock.elapsedRealtime();
             String searchKey=revision+":"+SocialPost.digest(post.app+"\n"+java.text.Normalizer.normalize(post.text,java.text.Normalizer.Form.NFKC).replaceAll("\\s+"," "));
             JSONObject search=searches.get(searchKey,SystemClock.elapsedRealtime(),SocialPolicy.live(post.text)?60_000:300_000,()->{
                 active.timings.put("search_paid",true);
-                return call(post,"news",asset("social_search_prompt.txt")+"\nToday is "+LocalDate.now(ZoneOffset.UTC)+". Search the claim itself, preserving its people, numbers and dates.",true,revision);
+                return call(post,"news",asset("social_search_prompt.txt")+"\nToday is "+LocalDate.now(ZoneOffset.UTC)+". Search the claim itself, preserving its people, numbers and dates."+(SocialPolicy.visibleTextScope(post)?"\nThis is a VISIBLE TEXT ONLY check of a collapsed X post. Check complete independent factual statements in the visible text, ignoring the Show more interface label. Do not certify the hidden text. If the visible fragment has no complete independent assertion or could reverse its meaning, use research.":""),true,revision);
             });
             active.mark("search_ms",searchStarted);
             // Search may emit a spurious "skip" even while retrieving the exact
@@ -176,24 +178,56 @@ public final class SocialClient {
             if("skip".equals(answer.optString("v")))return quiet("nonfactual");
             SocialVerdict.Source source=SocialEvidence.selectedGrounded(answer,contextPages,post.text,fresh,System.currentTimeMillis());
             active.timings.put("grounded_source_accepted",source!=null);
-            if(textComplete(post)&&source!=null&&confirmContradiction(post,answer,contextPages,revision,active))return new SocialVerdict(answer.optString("v"),"sources",quickReason(answer.optString("v")),Collections.singletonList(source));
+            if(checkableText(post)&&source!=null&&confirmContradiction(post,answer,contextPages,revision,active))return new SocialVerdict(answer.optString("v"),"sources",quickReason(answer.optString("v")),Collections.singletonList(source));
             return SocialVerdict.unclear(post.media?"The picture or full post needs a closer check.":"These sources do not settle this claim. Try Research deeper.");
         }
         long researchStarted=SystemClock.elapsedRealtime();
         JSONObject answer=callBody(post,"detail",true,revision,SocialRequests.body(researchInput,"detail",asset("social_research_prompt.txt")+"\nToday is "+LocalDate.now(ZoneOffset.UTC)+". Assess the supplied search results."));
         active.mark("research_ms",researchStarted);
-        String kind=answer.optString("v");if("skip".equals(kind))return new SocialVerdict("skip","sources","This is an opinion or a personal message, so there is no fact to check.",Collections.emptyList());
-        if(!kind.equals("true")&&!kind.equals("false"))return new SocialVerdict("uncertain","sources",researchReason(answer,"The reports do not settle this exact claim."),researchReferences(answer));
-        long verificationStarted=SystemClock.elapsedRealtime();
-        List<SocialVerdict.Source> verified=verifiedSupport(post,kind,answer,fresh,revision,active);
-        active.mark("verification_ms",verificationStarted);
-        if(verified.isEmpty())return new SocialVerdict("uncertain","sources","I found related reports, but could not verify this exact claim from the source pages. The links below show what was found.",researchReferences(answer));
-        return new SocialVerdict(kind,"sources",researchReason(answer,quickReason(kind)),verified);
+        active.timings.put("research_decision",answer.optString("v"));
+        // Search annotations contain the actual evidence. Reconsider all of it,
+        // with complete article text where available, even when the search model
+        // initially abstains or formats its citations incorrectly. The final
+        // comparison sees the same crop and links, not just a text-only NLI task.
+        List<SocialVerdict.Source> hits=SocialEvidence.researchHits(answer);
+        if(hits.isEmpty())return new SocialVerdict("uncertain","sources",researchReason(answer,"The search did not return a source for this claim."),Collections.emptyList());
+        long fetchStarted=SystemClock.elapsedRealtime();
+        List<SocialVerdict.Source> pages=articles.fetch(hits,3200),evidence=new ArrayList<>();
+        for(SocialVerdict.Source hit:hits){SocialVerdict.Source expanded=hit;for(SocialVerdict.Source page:pages)if(SocialEvidence.sameSource(hit.url,page.url)){expanded=page;break;}evidence.add(expanded);}
+        active.mark("article_fetch_ms",fetchStarted);active.timings.put("article_count",pages.size());
+        SocialResearchInput groundedInput=new SocialResearchInput(SocialEvidence.screeningInput(post,evidence),researchInput.jpegDataUrl,researchInput.links);
+        long reportStarted=SystemClock.elapsedRealtime();
+        JSONObject report=callBody(post,"report",false,revision,SocialRequests.body(groundedInput,"report",asset("social_report_prompt.txt")));
+        active.mark("report_ms",reportStarted);active.timings.put("report_decision",report.optString("v"));
+        String kind=report.optString("v");
+        if("skip".equals(kind))return quiet("nonfactual");
+        // Dates are checked only for the selected source; a blocked secondary
+        // page must not erase a finding supported by an independent source.
+        int index=report.optInt("source",-1);
+        if(index>=0&&index<evidence.size()&&("true".equals(kind)||"false".equals(kind))&&fresh){
+            SocialVerdict.Source selected=evidence.get(index);
+            if(selected.published.isEmpty())try{
+                SocialVerdict.Source dated=sources.verify(new JSONObject().put("url",selected.url).put("quote",selected.quote.substring(0,Math.min(4000,selected.quote.length()))),true,true,SocialPolicy.sourceAgeWindow(post.text));
+                if(dated!=null)evidence.set(index,new SocialVerdict.Source(selected.title,selected.url,selected.quote,dated.published));
+            }catch(Exception unavailable){active.timings.put("publication_unavailable",true);}
+        }
+        SocialVerdict.Source proof=SocialEvidence.selectedGrounded(report,evidence,post.text,fresh,System.currentTimeMillis());
+        active.timings.put("report_source_accepted",proof!=null);
+        boolean visual=SocialPolicy.visualClaim(post.text);
+        if(proof!=null&&!visual&&confirmContradiction(post,report,evidence,revision,active))return new SocialVerdict(kind,"sources",researchReason(report,quickReason(kind)),Collections.singletonList(proof));
+        String reason=researchReason(report,"The reports do not settle this exact claim.");
+        if(("true".equals(kind)||"false".equals(kind))&&proof==null)reason=(fresh&&index>=0&&index<evidence.size()?"I could not confirm a recent source for this claim. ":"I could not match the conclusion to a source. ")+reason;
+        else if(visual&&("true".equals(kind)||"false".equals(kind)))reason="I found reporting on this topic, but could not verify this particular picture or video. The source text below shows what was confirmed.";
+        else if("false".equals(kind))reason="The source does not clearly disprove this claim. It describes related events, but does not establish that this exact statement is wrong. Read the source excerpt below.";
+        List<SocialVerdict.Source> references=new ArrayList<>();
+        for(SocialVerdict.Source source:evidence){references.add(new SocialVerdict.Source(source.title,source.url,SocialEvidence.literalExcerpt(source.quote,post.text),source.published));if(references.size()==3)break;}
+        return new SocialVerdict("uncertain","sources",reason,references);
     }
     private static String quickReason(String kind){return "true".equals(kind)?"The source supports the message. Read the report excerpt below.":"The source contradicts the message. Read what it says below.";}
     private static String researchReason(JSONObject answer,String fallback){String why=answer.optString("why").trim();return why.isEmpty()?fallback:why.substring(0,Math.min(900,why.length()));}
     private static List<SocialVerdict.Source> researchReferences(JSONObject answer){List<SocialVerdict.Source> out=new ArrayList<>();for(SocialVerdict.Source source:SocialEvidence.searchHits(answer.optJSONArray("_retrieved"),2))out.add(new SocialVerdict.Source(source.title,source.url,SocialEvidence.literalExcerpt(source.quote,""),source.published));return out;}
     private static boolean textComplete(SocialPost post){return post.completeVisibleText&&post.text.length()<=4000&&!post.text.endsWith("…")&&!post.text.endsWith("...");}
+    private static boolean checkableText(SocialPost post){return textComplete(post)||SocialPolicy.visibleTextScope(post);}
     private boolean confirmContradiction(SocialPost post,JSONObject answer,List<SocialVerdict.Source> evidence,long revision,Work active)throws Exception{
         if(!"false".equals(answer.optString("v")))return true;
         // Cheap one-pass models can mistake missing facts or a different event
@@ -264,7 +298,7 @@ public final class SocialClient {
         Request request=new Request.Builder().url("https://openrouter.ai/api/v1/chat/completions").header("Authorization","Bearer "+key)
                 .post(RequestBody.create(body.toString(),MediaType.get("application/json"))).build();
         String id=costs.start(model,mode);boolean settled=false;
-        Call call=http.newCall(request);call.timeout().timeout("screen".equals(mode)?3500:"grounded".equals(mode)?6000:"news".equals(mode)?8000:web?15000:4000,TimeUnit.MILLISECONDS);
+        Call call=http.newCall(request);call.timeout().timeout("screen".equals(mode)?3500:"grounded".equals(mode)?6000:"news".equals(mode)?8000:"report".equals(mode)?8000:web?15000:4000,TimeUnit.MILLISECONDS);
         synchronized(calls){if(!valid(post,revision)){costs.finish(id,model,new JSONObject().put("usage",new JSONObject().put("cost",0)),"cancelled_before_send");throw new IOException("Screening is off");}calls.add(call);}
         try(Response response=call.execute()) {
             if(!response.isSuccessful()||response.body()==null){costs.finish(id,model,null,"http_"+response.code());settled=true;throw new IOException("Provider unavailable");}

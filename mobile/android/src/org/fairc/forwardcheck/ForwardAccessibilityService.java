@@ -94,7 +94,7 @@ public final class ForwardAccessibilityService extends AccessibilityService {
                     hardware=Bitmap.wrapHardwareBuffer(result.getHardwareBuffer(),result.getColorSpace());if(hardware==null)throw new IllegalStateException();
                     // Refuse stale crops after scrolling or switching chats.
                     AccessibilityNodeInfo current=root();if(current==null)throw new IllegalStateException();ChatSnapshot now;try{now=snapshot(current);}finally{current.recycle();}
-                    boolean unchanged=false;for(ChatSnapshot.Bubble b:now.bubbles)if(b.signature.equals(bubble.signature) && b.image!=null && b.image.equals(crop))unchanged=true;
+                    boolean unchanged=false;for(ChatSnapshot.Bubble b:now.bubbles)if(b.signature.equals(bubble.signature) && b.instance.equals(bubble.instance) && b.image!=null && b.image.equals(crop))unchanged=true;
                     if(!chat.equals(now.chat) || !unchanged)throw new IllegalStateException();
                     float sx=(float)hardware.getWidth()/window.width(),sy=(float)hardware.getHeight()/window.height();
                     int x=Math.max(0,Math.round((crop.left-window.left)*sx)),y=Math.max(0,Math.round((crop.top-window.top)*sy));

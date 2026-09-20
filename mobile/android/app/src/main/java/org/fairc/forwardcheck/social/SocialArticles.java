@@ -68,12 +68,20 @@ final class SocialArticles {
                 }
                 String type=response.header("Content-Type","").toLowerCase(Locale.ROOT);
                 if(!response.isSuccessful()||response.body()==null||!(type.contains("text/html")||type.contains("application/xhtml+xml")))return null;
-                okio.BufferedSource body=response.body().source();body.request(MAX_BYTES+1L);if(body.getBuffer().size()>MAX_BYTES)return null;
-                byte[] bytes=body.readByteArray();String charset=response.body().contentType()!=null&&response.body().contentType().charset()!=null?response.body().contentType().charset().name():StandardCharsets.UTF_8.name();
+                // A long advertising tail must not discard an already-read
+                // article when the response reaches the byte/time budget.
+                byte[] bytes=readBounded(response.body().source());String charset=response.body().contentType()!=null&&response.body().contentType().charset()!=null?response.body().contentType().charset().name():StandardCharsets.UTF_8.name();
                 return parse(hit,new String(bytes,charset),url);
             }
         }
         return null;
+    }
+
+    static byte[] readBounded(okio.BufferedSource body)throws java.io.IOException{
+        java.io.ByteArrayOutputStream bytes=new java.io.ByteArrayOutputStream();byte[] buffer=new byte[8192];
+        try{while(bytes.size()<MAX_BYTES){int n=body.read(buffer,0,Math.min(buffer.length,MAX_BYTES-bytes.size()));if(n<0)break;bytes.write(buffer,0,n);}}
+        catch(java.io.IOException unavailable){if(bytes.size()==0)throw unavailable;}
+        return bytes.toByteArray();
     }
 
     static SocialVerdict.Source parse(SocialVerdict.Source hit,String html,String finalUrl){

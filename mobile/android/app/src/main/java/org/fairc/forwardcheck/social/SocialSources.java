@@ -37,7 +37,7 @@ final class SocialSources {
                 Document doc=readDocument(response.body().source(),url,retrievedPassage);
                 String published=publication(doc);
                 if(live&&!recent(published,System.currentTimeMillis(),maxAge))return null;
-                doc.select("script,style,noscript,nav,footer,header").remove();
+                doc.select("script,style,noscript,nav,footer").remove();
                 if(!retrievedPassage&&!normalized(doc.text()).contains(normalized(quote)))return null;
                 return new SocialVerdict.Source(doc.title().isEmpty()?uri.getHost():doc.title(),url,quote,published);
             }

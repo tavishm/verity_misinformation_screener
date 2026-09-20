@@ -126,7 +126,7 @@ public final class SocialScreeningService extends AccessibilityService {
         SocialPost post=card.reading.post();
         if("checking".equals(verdict.kind)){show(card,"·","Checking…",SocialUi.INK,null);return;}
         if(verdict.decisive()){
-            String origin="quick_ai".equals(verdict.basis)?"AI · ":"news_excerpt".equals(verdict.basis)||"news_context".equals(verdict.basis)?verdict.sourceLabel()+" · ":"Text · ";
+            String origin="visible_text".equals(verdict.basis)?"Visible text · ":"quick_ai".equals(verdict.basis)?"AI · ":"news_excerpt".equals(verdict.basis)||"news_context".equals(verdict.basis)?verdict.sourceLabel()+" · ":"Text · ";
             show(card,"true".equals(verdict.kind)?"✓":"×",origin+verdict.label(),"true".equals(verdict.kind)?SocialUi.GREEN:SocialUi.RED,()->{
                 if(stillHere(card))researchInput(card,input->{if(stillHere(card))startActivity(SocialResultActivity.intent(this,post,verdict,input).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));});
             });
@@ -136,7 +136,7 @@ public final class SocialScreeningService extends AccessibilityService {
     private void renderDetail(Card card,CompletedDetail completed){
         if(!stillHere(card)||completed(card.reading.post())!=completed)return;
         SocialVerdict verdict=completed.verdict;String symbol,colorText;int color;
-        if(verdict.decisive()){symbol="true".equals(verdict.kind)?"✓":"×";colorText=verdict.sourceLabel()+" · "+verdict.label();color="true".equals(verdict.kind)?SocialUi.GREEN:SocialUi.RED;}
+        if(verdict.decisive()){symbol="true".equals(verdict.kind)?"✓":"×";colorText=("visible_text".equals(verdict.basis)?"Visible text":verdict.sourceLabel())+" · "+verdict.label();color="true".equals(verdict.kind)?SocialUi.GREEN:SocialUi.RED;}
         else if("skip".equals(verdict.kind)){symbol="·";colorText="No factual claim · See why";color=SocialUi.INK;}
         else{symbol="?";colorText="Still unsure · See why";color=SocialUi.AMBER;}
         show(card,symbol,colorText,color,()->{if(stillHere(card)&&completed(card.reading.post())==completed&&activeWindow(completed.post.app)==completed.window){reportRoundTrip.begin(completed.post.app,completed.window,SystemClock.elapsedRealtime());startActivity(SocialResultActivity.intent(this,completed.post,verdict,completed.input).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));}});

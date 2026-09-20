@@ -4,6 +4,17 @@ import static org.junit.Assert.*;
 import org.json.*;
 
 public class SocialRequestsTest {
+    @Test public void finalReportRetainsExplicitImageAndLinksWithoutAnotherSearch()throws Exception{
+        String jpeg="data:image/jpeg;base64,/9j/2Q==";
+        SocialResearchInput input=new SocialResearchInput("Grounded claim and indexed source passages",jpeg,java.util.Collections.singletonList("https://example.org/article"));
+        JSONObject request=SocialRequests.body(input,"report","Report policy");
+        assertFalse(request.has("plugins"));assertFalse(request.has("tools"));
+        JSONArray parts=request.getJSONArray("messages").getJSONObject(1).getJSONArray("content");
+        assertEquals(jpeg,parts.getJSONObject(1).getJSONObject("image_url").getString("url"));
+        JSONObject payload=new JSONObject(parts.getJSONObject(0).getString("text"));
+        assertEquals("https://example.org/article",payload.getJSONArray("links").getString(0));
+        assertEquals("Grounded claim and indexed source passages",payload.getString("post_text"));
+    }
     @Test public void quickCannotSpendOnWebSearch()throws Exception{JSONObject j=SocialRequests.body("The Earth is flat.","quick","system");assertFalse(j.has("tools"));assertEquals(80,j.getInt("max_tokens"));assertEquals(SocialPolicy.MODEL,j.getString("model"));assertFalse(j.getJSONObject("reasoning").getBoolean("enabled"));assertEquals("price",j.getJSONObject("provider").getString("sort"));}
     @Test public void automaticInformationScreenNeverBuysWebSearch()throws Exception{
         JSONObject j=SocialRequests.body("{\"claim\":\"News headline\",\"sources\":[]}","screen","fixed screen");

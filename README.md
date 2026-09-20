@@ -31,7 +31,8 @@ and no representative WhatsApp, SMS, or social-media accuracy study is claimed.
 Prerequisites for the Android build are Python 3.10+, a JDK 17 runtime, and an
 Android SDK containing Platform 35 and Build Tools 35.0.0. Set `ANDROID_HOME`
 to that SDK. The build helper downloads its pinned Gradle and JDK copies into
-an ignored local cache; it makes no global Java changes.
+an ignored local cache; it makes no global Java changes. It creates a local
+Android debug signing key on a fresh checkout and preserves an existing key.
 
 The contextual Android model is a separately hosted artifact because it is
 larger than GitHub's regular file-size limit. Fetch and verify it before an APK

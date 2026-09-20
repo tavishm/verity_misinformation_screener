@@ -16,6 +16,7 @@ JDK_URL = 'https://github.com/adoptium/temurin17-binaries/releases/download/jdk-
 JDK_SHA = '3808d1d15e3ec6bd5b84057fb5d84c33d8a1536a258146bcea2e603fc726e08e'
 GRADLE_URL = 'https://services.gradle.org/distributions/gradle-8.9-bin.zip'
 GRADLE_SHA = 'd725d707bfabd4dfdc958c624003b3c80accc03f7037b5122c4b1d0ef15cecab'
+DEBUG_KEYSTORE = ROOT / '.cache/android/debug.keystore'
 
 
 def download(url, destination, expected):
@@ -57,7 +58,25 @@ def prepare():
     env = os.environ.copy()
     env.update(JAVA_HOME=str(jdks[0].parents[1]), ANDROID_HOME=str(sdk),
                GRADLE_USER_HOME=str(ROOT / '.cache/gradle'))
+    ensure_debug_keystore(jdks[0].parents[1])
     return gradle, env
+
+
+def ensure_debug_keystore(jdk_home, destination=DEBUG_KEYSTORE):
+    """Create the task-local Android debug signing key when it is absent."""
+    if destination.exists():
+        return False
+    keytool = Path(jdk_home) / 'bin/keytool'
+    if not keytool.is_file():
+        raise RuntimeError('Pinned JDK did not contain keytool')
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.run([
+        str(keytool), '-genkeypair', '-keystore', str(destination),
+        '-storetype', 'JKS', '-storepass', 'android', '-keypass', 'android',
+        '-alias', 'androiddebugkey', '-keyalg', 'RSA', '-keysize', '2048',
+        '-validity', '10000', '-dname', 'CN=Android Debug,O=Android,C=US',
+    ], check=True)
+    return True
 
 
 def build(tasks=None):
