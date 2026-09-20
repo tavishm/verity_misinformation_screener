@@ -19,6 +19,7 @@ public final class ForwardAccessibilityService extends AccessibilityService {
     private final Handler main=new Handler(Looper.getMainLooper());
     private final ExecutorService local=Executors.newSingleThreadExecutor();
     private final MessageTracker tracker=new MessageTracker();
+    private final MessageRows messageRows=new MessageRows();
     private final Set<String> busy=new HashSet<>();
     private final LinkedHashMap<String,Decision> decisions=new LinkedHashMap<String,Decision>(64,.75f,true){protected boolean removeEldestEntry(Map.Entry<String,Decision> e){return size()>256;}};
     private SharedPreferences choices; private ChosenContacts contacts; private SmsSenderLookup smsContacts; private WindowManager windows;
@@ -42,7 +43,18 @@ public final class ForwardAccessibilityService extends AccessibilityService {
         info.flags|=AccessibilityServiceInfo.FLAG_REPORT_VIEW_IDS|AccessibilityServiceInfo.FLAG_INCLUDE_NOT_IMPORTANT_VIEWS|AccessibilityServiceInfo.FLAG_RETRIEVE_INTERACTIVE_WINDOWS;setServiceInfo(info);
         schedule(150);main.removeCallbacks(heartbeat);main.postDelayed(heartbeat,1000);
     }
-    @Override public void onAccessibilityEvent(AccessibilityEvent event){events++;schedule(160);}
+    @Override public void onAccessibilityEvent(AccessibilityEvent event){
+        events++;
+        String app=String.valueOf(event.getPackageName());
+        if(event.getEventType()==AccessibilityEvent.TYPE_VIEW_SCROLLED && ("com.whatsapp".equals(app)||"com.whatsapp.w4b".equals(app))){
+            AccessibilityNodeInfo source=event.getSource();
+            if(source!=null)try{
+                String kind=String.valueOf(source.getClassName());
+                if(kind.endsWith("ListView")||kind.endsWith("RecyclerView"))messageRows.update(Integer.toString(source.hashCode()),event.getFromIndex(),event.getToIndex(),event.getItemCount());
+            }finally{source.recycle();}
+        }
+        schedule(160);
+    }
     private void schedule(long delay){if(!destroyed && !queued){queued=true;main.postDelayed(scheduled,delay);}}
     @Override public void onInterrupt(){clearPrompt();}
     @Override public void onDestroy(){destroyed=true;connected=false;if(active==this)active=null;save();if(smsContacts!=null)smsContacts.close();main.removeCallbacksAndMessages(null);local.shutdownNow();clearPrompt();super.onDestroy();}
@@ -59,9 +71,9 @@ public final class ForwardAccessibilityService extends AccessibilityService {
     }
     private void scan(){
         if(destroyed)return;scans++;AccessibilityNodeInfo root=root();
-        if(root==null){rootPackage="none";visible=null;clearPrompt();reason="outside_supported_messages_or_locked";return;}
+        if(root==null){rootPackage="none";visible=null;messageRows.clear();clearPrompt();reason="outside_supported_messages_or_locked";return;}
         rootPackage=String.valueOf(root.getPackageName());
-        ChatSnapshot frame;try{frame=snapshot(root);}finally{root.recycle();}
+        ChatSnapshot frame;try{frame=snapshot(root);if(visible!=null&&!visible.chat.equals(frame.chat)){messageRows.clear();frame=snapshot(root);}}finally{root.recycle();}
         if(frame.chat.isEmpty() || frame.bubbles.isEmpty()){visible=frame;clearPrompt();reason="no_visible_bubbles";return;}
         List<MessageTracker.Item> items=new ArrayList<>();for(ChatSnapshot.Bubble b:frame.bubbles)items.add(new MessageTracker.Item(b.signature,b.hint,b.eligible,b.instance));
         List<MessageTracker.Entry> entries=tracker.reconcile(frame.chat,items,frame.sms);for(int i=0;i<entries.size();i++)frame.bubbles.get(i).entry=entries.get(i);
@@ -75,7 +87,7 @@ public final class ForwardAccessibilityService extends AccessibilityService {
         }
         reason="no_new_message";
     }
-    private ChatSnapshot snapshot(AccessibilityNodeInfo root){return SmsPolicy.supported(String.valueOf(root.getPackageName()))?SmsSnapshot.read(this,root,smsContacts):ChatSnapshot.read(root,contacts);}
+    private ChatSnapshot snapshot(AccessibilityNodeInfo root){return SmsPolicy.supported(String.valueOf(root.getPackageName()))?SmsSnapshot.read(this,root,smsContacts):ChatSnapshot.read(root,contacts,messageRows);}
     private boolean contains(String id){if(visible==null || id==null)return false;for(ChatSnapshot.Bubble b:visible.bubbles)if(b.eligible && b.entry!=null && id.equals(b.entry.id))return true;return false;}
     private void classify(String id,String chat,String text,String source,String note,boolean noText){
         local.execute(()->{
@@ -184,6 +196,7 @@ public final class ForwardAccessibilityService extends AccessibilityService {
     private int dp(int value){return Math.round(value*getResources().getDisplayMetrics().density);}
     @Override protected void dump(FileDescriptor fd,PrintWriter w,String[] args){w.println("Verity diagnostics — no message or contact content");w.println("connected="+connected);w.println("scans="+scans);w.println("events="+events);w.println("root="+rootPackage);w.println("visible_messages="+(visible==null?0:visible.bubbles.size()));w.println("unsaved="+(visible!=null&&visible.unknown));w.println("selected_contact="+(visible!=null&&visible.selected));w.println("overlay="+(overlay!=null));w.println("local_jobs="+busy.size());w.println("gate="+gate);w.println("last_source="+lastSource);w.println("last_screened_characters="+lastScreenedCharacters);w.println("reason="+reason);
         w.println("sms_enabled="+SmsPrefs.enabled(this));w.println("sms_contacts_allowed="+SmsPrefs.contactsAllowed(this));
+        w.println("message_list_positions="+messageRows.available());
         if(visible!=null)for(ChatSnapshot.Bubble b:visible.bubbles)w.println("message: image="+(b.image!=null)+", instance_kind="+(b.instance.isEmpty()?"none":b.instance.substring(0,b.instance.indexOf(':')))+", forwarded="+b.forwarded+", outgoing="+b.outgoing+", eligible="+b.eligible+", settled="+(b.entry!=null&&b.entry.settled)+", known="+(b.entry!=null&&decisions.containsKey(b.entry.id))+", text_chars="+b.text.length());
     }
 }

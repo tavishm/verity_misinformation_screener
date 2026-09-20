@@ -4,6 +4,24 @@ import static org.junit.Assert.*;
 import org.json.*;
 
 public class SocialEvidenceTest {
+    @Test public void blockedArticleCanUseIndependentDatedPublisherEvidence(){
+        long now=java.time.Instant.parse("2026-09-20T06:00:00Z").toEpochMilli();
+        SocialVerdict.Source blocked=new SocialVerdict.Source("Blocked article","https://news.example/one","A factual provider passage about the student's death.","");
+        SocialVerdict.Source rss=new SocialVerdict.Source("Other publisher","https://other.example/two","The student's mother said her son was killed and harassed.","2026-09-19T11:00:00Z");
+        java.util.List<SocialVerdict.Source> out=SocialEvidence.researchContext(java.util.Collections.singletonList(blocked),java.util.Collections.singletonList(rss),"Mother of student who died says her son was killed",now);
+        assertEquals(1,out.size());assertSame(rss,out.get(0));assertEquals("",blocked.published);
+    }
+    @Test public void rssDateCanEnrichOnlyTheExactUrlAndCannotRefreshAnOldPage(){
+        long now=java.time.Instant.parse("2026-09-20T06:00:00Z").toEpochMilli();String url="https://news.example/report?id=1";
+        SocialVerdict.Source page=new SocialVerdict.Source("Story",url,"The actual provider excerpt remains the evidence.","");
+        SocialVerdict.Source rss=new SocialVerdict.Source("RSS",url,"Publisher feed excerpt.","2026-09-20T01:00:00Z");
+        java.util.List<SocialVerdict.Source> matched=SocialEvidence.researchContext(java.util.Collections.singletonList(page),java.util.Collections.singletonList(rss),"A student died",now);
+        assertEquals(1,matched.size());assertEquals(page.quote,matched.get(0).quote);assertEquals(rss.published,matched.get(0).published);
+        SocialVerdict.Source old=new SocialVerdict.Source("Old",url,page.quote,"2020-01-01T00:00:00Z");
+        assertEquals(old.published,SocialEvidence.researchContext(java.util.Collections.singletonList(old),java.util.Collections.singletonList(rss),"A student died",now).get(0).published);
+        SocialVerdict.Source other=new SocialVerdict.Source("Different",url.replace("id=1","id=2"),rss.quote,rss.published);
+        assertEquals(other.url,SocialEvidence.researchContext(java.util.Collections.singletonList(page),java.util.Collections.singletonList(other),"A student died",now).get(0).url);
+    }
     @Test public void deepExpansionPrioritizesRealCitationsAndKeepsAllEightResults()throws Exception{
         JSONArray retrieved=new JSONArray();for(int i=0;i<8;i++)retrieved.put(new JSONObject().put("type","url_citation").put("url_citation",new JSONObject().put("url","https://example.org/"+i).put("content","A sufficiently long actual provider passage "+i)));
         JSONObject answer=new JSONObject().put("_retrieved",retrieved).put("citations",new JSONArray().put("https://invented.example/article").put("https://example.org/7"));

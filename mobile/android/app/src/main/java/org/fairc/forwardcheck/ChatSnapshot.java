@@ -16,8 +16,13 @@ final class ChatSnapshot {
     String chat="", title=""; boolean unknown, group, selected, sms; int windowId, nodes;
     Rect windowBounds; final List<Bubble> bubbles=new ArrayList<>();
     private String date=""; private int cues;
+    private MessageRows rows;
     static ChatSnapshot read(AccessibilityNodeInfo root, ChosenContacts contacts) {
+        return read(root,contacts,null);
+    }
+    static ChatSnapshot read(AccessibilityNodeInfo root, ChosenContacts contacts,MessageRows rows) {
         ChatSnapshot s=new ChatSnapshot(); s.windowId=root.getWindowId(); s.windowBounds=new Rect(); root.getBoundsInScreen(s.windowBounds);
+        s.rows=rows;
         s.walk(root,0,false,-1); s.unknown=(s.cues & MessageExtractor.UNSAVED)!=0; s.group=(s.cues & MessageExtractor.GROUP)!=0;
         s.selected=!s.group && contacts.matches(s.title);
         if(s.title.isEmpty()) { s.bubbles.clear(); return s; }
@@ -52,7 +57,10 @@ final class ChatSnapshot {
             }
             return;
         }
-        for(int i=0;i<Math.min(100,node.getChildCount());i++) { AccessibilityNodeInfo child=node.getChild(i); if(child!=null) { walk(child,depth+1,inside,row); child.recycle(); } }
+        for(int i=0;i<Math.min(100,node.getChildCount());i++) { AccessibilityNodeInfo child=node.getChild(i); if(child!=null) {
+            int listRow=rows==null?-1:rows.row(Integer.toString(node.hashCode()),node.getChildCount(),i);
+            walk(child,depth+1,inside,listRow>=0?listRow:row); child.recycle();
+        } }
     }
     private void contents(AccessibilityNodeInfo node,Bubble b,int depth) {
         if(depth>10)return;

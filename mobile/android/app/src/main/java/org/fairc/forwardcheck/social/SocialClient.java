@@ -194,6 +194,7 @@ public final class SocialClient {
         long fetchStarted=SystemClock.elapsedRealtime();
         List<SocialVerdict.Source> pages=articles.fetch(hits,3200),evidence=new ArrayList<>();
         for(SocialVerdict.Source hit:hits){SocialVerdict.Source expanded=hit;for(SocialVerdict.Source page:pages)if(SocialEvidence.sameSource(hit.url,page.url)){expanded=page;break;}evidence.add(expanded);}
+        evidence=SocialEvidence.researchContext(evidence,news.fastRelated(post.text,20),post.text,System.currentTimeMillis());
         active.mark("article_fetch_ms",fetchStarted);active.timings.put("article_count",pages.size());
         SocialResearchInput groundedInput=new SocialResearchInput(SocialEvidence.screeningInput(post,evidence),researchInput.jpegDataUrl,researchInput.links);
         long reportStarted=SystemClock.elapsedRealtime();

@@ -68,6 +68,20 @@ final class SocialEvidence {
         for(SocialVerdict.Source source:all)if(!ordered.contains(source))ordered.add(source);
         return ordered;
     }
+    /** Publisher RSS is independent evidence when an article endpoint blocks
+     * automated reads. Dates may enrich only the exact same article URL. */
+    static java.util.List<SocialVerdict.Source> researchContext(java.util.List<SocialVerdict.Source> pages,java.util.List<SocialVerdict.Source> publisherItems,String claim,long now){
+        java.util.List<SocialVerdict.Source> merged=new java.util.ArrayList<>(pages);
+        for(SocialVerdict.Source item:publisherItems){int found=-1;for(int i=0;i<merged.size();i++)if(sameSource(item.url,merged.get(i).url)){found=i;break;}
+            if(found<0)merged.add(item);
+            else {SocialVerdict.Source page=merged.get(found);if(page.published.isEmpty()&&!item.published.isEmpty())merged.set(found,new SocialVerdict.Source(page.title,page.url,page.quote,item.published));}}
+        if(SocialPolicy.freshEvidence(claim)){
+            java.util.List<SocialVerdict.Source> dated=new java.util.ArrayList<>();
+            for(SocialVerdict.Source s:merged)if(SocialSources.recent(s.published,now,SocialPolicy.sourceAgeWindow(claim)))dated.add(s);
+            if(!dated.isEmpty())return dated;
+        }
+        return merged;
+    }
     static JSONObject answer(JSONObject completion)throws Exception {
         JSONObject choice=completion.getJSONArray("choices").getJSONObject(0);
         if(!"stop".equals(choice.optString("finish_reason")))throw new java.io.IOException("Incomplete answer");
